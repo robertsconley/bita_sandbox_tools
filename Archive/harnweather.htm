@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bat in the Attic, Travel Encounters</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />	
+</head>
+<body>
+	<h1>Harn Weather Generation</h1>
+	<i></i>
+    <form name="WeatherForm">
+		<table id="weather_setup">
+			<tr id="weather_tr">
+				<td>
+					<label for="WeatherTypeLabel"><b>Choose Climate:</b></label>
+				</td>
+				<td>
+					<select name="ClimateType" id="ClimateType">
+						<option value="Temperate">Temperate</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="travel_tr">
+				<td>
+					<label for="MonthLabel"><b>Choose Month:</b></label>
+				</td>
+				<td>
+					<select name="StartMonth" id="StartMonth">
+						<option value="1">Nuzyael</option>
+						<option value="2">Peonu</option>
+						<option value="3">Kelen</option>
+						<option value="4">Nolus</option>
+						<option value="5">Larane</option>
+						<option value="6">Agrazhar</option>
+						<option value="7">Azura</option>
+						<option value="8">Halane,</option>
+						<option value="9">Savor</option>
+						<option value="10">Ilvin</option>
+						<option value="11">Navek</option>
+						<option value="12">Morgat</option>
+					</select>
+				</td>			
+			</tr>
+		</table>
+		<br/>
+		<button type="button" onclick="Generate_Weather()">Generate Weather</button><br/>
+    </form>
+	<br/>
+    <p id="contentWeather"></p>
+	
+	<p id = "contentcopybody"> <input type="text" value="" id="contentcopyResult"></p>
+	<script src="bita_utilities.js"></script>
+    <script src="harnweather.js"></script>
+</body>
+</html>

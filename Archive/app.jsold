@@ -1,0 +1,3709 @@
+function D(dice) {
+    return Math.ceil(dice * Math.random());
+}
+
+function _1D6() {
+	return D(6);
+}
+
+function _2D6() {
+	return D(6) + D(6);
+}
+
+function _3D6() {
+	return D(6) + D(6) + D(6);
+}
+
+function _4D6() {
+	return D(6) + D(6) + D(6) + D(6);
+}
+
+function _5D6() {
+	return D(6) + D(6) + D(6) + D(6) + D(6);
+}
+
+function _6D6() {
+	return D(6) + D(6) + D(6) + D(6) + D(6) + D(6);
+}
+
+function _2D8() {
+	return D(8) + D(8);
+}
+
+function _3D8() {
+	return D(8) + D(8) + D(8);
+}
+
+function _2D12() {
+	return D(12) + D(12);
+}
+
+function _1D10() {
+	return D(10);
+}
+
+function _2D10() {
+	return D(10) + D(10);
+}
+
+function _3D10() {
+	return D(10) + D(10) + D(10);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function _1DF() {
+    var roll = D(6);
+    var result = 0;
+    switch (roll) {
+        case 1:
+            return -1;
+        case 2:
+            return -1;
+        case 3:
+            return 0;
+        case 4:
+            return 0;
+        case 5:
+            return 1;
+        case 6:
+            return 1;
+    }
+}
+
+function _4DF() {
+    //return _1DF() + _1DF() + _1DF() + _1DF();
+	//return D(6)-D(6);
+	return D(6)+D(6);
+	//return D(5)+D(5);
+	//return D(3)+D(3)+D(3)+D(3);
+}
+
+function GenerateALand()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 25)
+	{
+		SB.Append(GenCopper(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenSilver(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 35)
+	{
+		SB.Append(GenGold(_2D6()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 50)
+	{
+		SB.Append(GenGems(_6D6()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 50)
+	{
+		SB.Append(GenJewelry(_6D6()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 40)
+	{
+		SB.Append(GenAnyItem(3));
+	}
+	return SB.ToString();
+}
+
+function GenerateADesert()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 20)
+	{
+		SB.Append(GenCopper(D(4)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenSilver(D(4)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenGold(_1D6()));
+		SB.Append("; ");
+	}
+	
+	{
+		if (D(100) <= 50)
+		{
+			SB.Append(GenGems(D(4) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 50)
+		{
+			SB.Append(GenJewelry(D(4) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 40)
+		{
+			SB.Append(GenMagicItem(3));
+		}
+		return SB.ToString();
+	}
+}
+
+function GenerateAWater()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 30)
+	{
+		SB.Append(GenGold(_5D6()));
+		SB.Append("; ");
+	}
+	
+	{
+		if (D(100) <= 60)
+		{
+			SB.Append(GenGems(D(6) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 60)
+		{
+			SB.Append(GenJewelry(D(6) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 50)
+		{
+			SB.Append(GenMaps(1));
+		}
+		return SB.ToString();
+	}
+}
+
+function GenerateB()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 50)
+	{
+		SB.Append(GenCopper(D(8)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenSilver(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenGold(D(3)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenGems(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenJewelry(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 10)
+	{
+		SB.Append(GenMagicWar(1));
+	}
+	return SB.ToString();
+}
+
+function GenerateC()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 20)
+	{
+		SB.Append(GenCopper(D(12)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenSilver(D(4)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenGems(D(4)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenJewelry(D(4)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 10)
+	{
+		SB.Append(GenAnyItem(2));
+	}
+	return SB.ToString();
+}
+
+function GenerateD()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 10)
+	{
+		SB.Append(GenCopper(D(8)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 15)
+	{
+		SB.Append(GenSilver(D(12)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 60)
+	{
+		SB.Append(GenGold(D(6)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenGems(D(8)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenJewelry(D(8)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 20)
+	{
+		SB.Append(GenAnyItem(2));
+		SB.Append("; ");
+		SB.Append(MagicPotion(false));
+	}
+	return SB.ToString();
+}
+
+function GenerateE()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 5)
+	{
+		SB.Append(GenCopper(D(10)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenSilver(D(12)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenGold(D(8)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 10)
+	{
+		SB.Append(GenGems(D(10)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 10)
+	{
+		SB.Append(GenJewelry(D(10)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 30)
+	{
+		SB.Append(GenAnyItem(3));
+		SB.Append("; ");
+		SB.Append(MagicScroll());
+	}
+	return SB.ToString();
+}
+
+function GenerateF()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 10)
+	{
+		SB.Append(GenSilver(_2D10()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 45)
+	{
+		SB.Append(GenGold(D(12)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 20)
+	{
+		SB.Append(GenGems(_2D12()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 20)
+	{
+		SB.Append(GenJewelry(_2D12()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 35)
+	{
+		SB.Append(GenAnyItemNoWeap(3));
+		SB.Append("; ");
+		SB.Append(MagicPotion(false));
+		SB.Append("; ");
+		SB.Append(MagicScroll());
+	}
+	return SB.ToString();
+}
+
+function GenerateG()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 75)
+	{
+		SB.Append(GenGold((D(4) * 10)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenGems(_3D6()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 25)
+	{
+		SB.Append(GenJewelry(D(10)));
+		SB.Append("; ");
+	}
+	if (D(100) <= 40)
+	{
+		SB.Append(GenAnyItem(4));
+		SB.Append("; ");
+		SB.Append(MagicScroll());
+	}
+	return SB.ToString();
+}
+
+function GenerateH()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 25)
+	{
+		SB.Append(GenCopper(_3D8()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 50)
+	{
+		SB.Append(GenSilver(D(100)));
+		SB.Append("; ");
+	}
+	
+	{
+		if (D(100) <= 75)
+		{
+			SB.Append(GenGold(D(6) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 50)
+		{
+			SB.Append(GenGems(D(100)));
+			SB.Append("; ");
+		}
+		if (D(100) <= 50)
+		{
+			SB.Append(GenJewelry(D(4) * 10));
+			SB.Append("; ");
+		}
+		if (D(100) <= 20)
+		{
+			SB.Append(GenAnyItem(4));
+			SB.Append("; ");
+			SB.Append(MagicPotion(false));
+			SB.Append("; ");
+			SB.Append(MagicScroll());
+		}
+		return SB.ToString();
+	}
+}
+
+function GenerateI()
+{
+	var SB = new StringBuilder();
+	if (D(100) <= 50)
+	{
+		SB.Append(GenGems(D(_2D8())));
+		SB.Append("; ");
+	}
+	if (D(100) <= 50)
+	{
+		SB.Append(GenJewelry(_2D8()));
+		SB.Append("; ");
+	}
+	if (D(100) <= 20)
+	{
+		SB.Append(GenAnyItem(1));
+	}
+	return SB.ToString();
+}
+
+function UnguardedLevel1()
+{
+	var TempS = "";
+	var Roll = 0;
+	TempS = TempS + numberWithCommas(D(6) * 100) + " SP";
+	Roll = D(100);
+	if (Roll <= 50)
+	{
+		TempS = TempS + "; " + numberWithCommas(D(6) * 10) + " GP";
+	}
+	Roll = D(100);
+	if (Roll <= 5)
+	{		
+		TempS = TempS + "; " + GenGems(D(6));
+	}
+	Roll = D(100);
+	if (Roll <= 5)
+	{
+		TempS = TempS + "; " + GenJewelry(D(6));
+	}
+	Roll = D(100);
+	if (Roll <= 2)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel2()
+{
+	var TempS = "";
+	
+	TempS = TempS + numberWithCommas(D(12) * 100) + " SP";
+	if (D(100) <= 50)
+	{
+		TempS = TempS + "; " + numberWithCommas(D(6) * 100) + " GP";
+	}
+	if (D(100) <= 10)
+	{
+		TempS = TempS + "; " + GenGems(D(6));
+	}
+	if (D(100) <= 10)
+	{
+		TempS = TempS + "; " + GenJewelry(D(6));
+	}
+	if (D(100) <= 8)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel3()
+{
+	var TempS = "";
+	TempS = TempS + numberWithCommas(D(6) * 1000) + " SP";
+	TempS = TempS + "; " + numberWithCommas(D(6) * 200) + " GP";
+	if (D(100) <= 20)
+	{
+		TempS = TempS + "; " + GenGems(D(6));
+	}
+	if (D(100) <= 20)
+	{
+		TempS = TempS + "; " + GenJewelry(D(6));
+	}
+	if (D(100) <= 10)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel4()
+{
+	var TempS = "";
+	TempS = TempS + numberWithCommas(D(6) * 2000) + " SP";
+	TempS = TempS + "; " + numberWithCommas(D(6) * 500) + " GP";
+	if (D(100) <= 30)
+	{
+		TempS = TempS + "; " + GenGems(D(6));
+	}
+	if (D(100) <= 30)
+	{
+		TempS = TempS + "; " + GenJewelry(D(6));
+	}
+	if (D(100) <= 15)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel5()
+{
+	var TempS = "";
+	TempS = TempS + numberWithCommas(D(6) * 5000) + " SP";
+	TempS = TempS + "; " + numberWithCommas(D(6) * 1000) + " GP";
+	if (D(100) <= 40)
+	{
+		TempS = TempS + "; " + GenGems(D(12));
+	}
+	if (D(100) <= 40)
+	{
+		TempS = TempS + "; " + GenJewelry(D(12));
+	}
+	if (D(100) <= 20)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel6()
+{
+	var TempS = "";
+	TempS = TempS + numberWithCommas(D(6) * 5000) + " SP";
+	TempS = TempS + "; " + numberWithCommas(D(6) * 2000) + " GP";
+	if (D(100) <= 50)
+	{
+		TempS = TempS + "; " + GenGems(D(12));
+	}
+	if (D(100) <= 50)
+	{
+		TempS = TempS + "; " + GenJewelry(D(12));
+	}
+	if (D(100) <= 25)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function UnguardedLevel7()
+{
+	var TempS = "";
+	TempS = TempS + numberWithCommas(D(6) * 10000) + " SP";
+	TempS = TempS + "; " + numberWithCommas(D(6) * 5000) + " GP";
+	if (D(100) <= 50)
+	{
+		TempS = TempS + "; " + GenGems(D(12));
+	}
+	if (D(100) <= 50)
+	{
+		TempS = TempS + "; " + GenJewelry(D(12));
+	}
+	if (D(100) <= 30)
+	{
+		TempS = TempS + "; " + GenMagicItem(1);
+	}
+	return TempS;
+}
+
+function SB_Test(){
+	var SB = new StringBuilder();
+	var result = "";
+	SB.Append(_3D6());
+	SB.Append("<br/>");
+	SB.Append(GemResult("2"));
+	SB.Append("<br/>");
+	SB.Append(numberWithCommas(10000));
+	SB.Append("<br/>");
+	var tTable = new RandomTable();
+	tTable.Add("One",1,2);
+	tTable.Add("Two",3,4);
+	tTable.Add("Three",5,6);
+	tTable.Add("Four",7,8);
+	SB.Append(tTable.Generate(D(8)));
+	SB.Append("<br/>");
+	tTable = GemTable();
+	SB.Append(tTable.Generate(D(100)));
+	SB.Append("<br/>");
+	SB.Append(GenGems(_3D6()));
+	SB.Append("<br/>");
+	SB.Append(GenJewelry(_3D6()));
+	SB.Append("<br/>");
+	SB.Append(TreasureMap(0));
+	SB.Append("<br/>");
+	SB.Append(MagicItem(true));
+	
+	result = SB.ToString();
+	document.getElementById("content").innerHTML = result + "<br/>";
+	return;
+	
+}
+
+function SB_Test2(){
+	var SB = new StringBuilder();
+	var result = "";
+	
+	for (i = 0; i < 1000; i++) {
+		SB.Append("<br/>");
+		SB.Append(MagicSwordType());
+	}
+	
+	result = SB.ToString();
+	document.getElementById("content").innerHTML = result + "<br/>";
+	return;
+}
+
+function SB_Test3(){
+	var SB = new StringBuilder();
+	var result = "";
+	
+	for (i = 0; i < 100; i++) {
+		SB.Append("<br/>");
+		SB.Append(GenerateADesert());
+		SB.Append(GenerateALand());
+		SB.Append(GenerateAWater());
+		SB.Append(GenerateB());
+		SB.Append(GenerateC());
+		SB.Append(GenerateD());
+		SB.Append(GenerateE());
+		SB.Append(GenerateF());
+		SB.Append(GenerateG());
+		SB.Append(GenerateH());
+		SB.Append(GenerateI());
+		
+	}
+	
+	result = SB.ToString();
+	document.getElementById("content").innerHTML = result + "<br/>";
+	return;
+}
+
+function CopyContent() {
+  var copyText = document.getElementById("contentcopyTreasure");
+  copyText.value = document.getElementById("contentTreasure").innerHTML
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Treasure: " + copyText.value);
+
+}
+
+function CopySword() {
+  var copyText = document.getElementById("contentcopyTreasure");
+  copyText.value = document.getElementById("contentSword").innerHTML
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Treasure: " + copyText.value);
+
+}
+
+function CopyDungeon() {
+  var copyText = document.getElementById("contentcopyarea");
+  var brRegex = /<br\s*[\/]?>/gi;
+  var dungeonText = document.getElementById("contentDungeon").innerHTML;  
+  copyText.value = dungeonText.replace(brRegex,"\r\n");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Taken!");
+
+}
+
+function CopyDungeonOld() {
+  var copyText = document.getElementById("contentcopyTreasure");
+  copyText.value = document.getElementById("contentDungeon").innerHTML
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert(copyText.value);
+
+}
+
+function Generate_Sword(){
+	var SB = new StringBuilder();
+	var result = "";
+	result =  MagicSword();
+	document.getElementById("contentSword").innerHTML = result;
+	document.getElementById("contentcopyTreasure").value = result;
+	return;
+}
+
+function Generate_Treasure(){
+	var SB = new StringBuilder();
+	var result = "";
+	var TType = "";
+	TType = document.forms["myForm"]["TTypes"].value
+	if (TType == "A_desert") {
+		result = GenerateADesert();
+	} else if (TType == "A_land") {
+		result = GenerateALand();
+	} else if (TType == "A_water") {
+		result = GenerateAWater();
+	} else if (TType == "B") {
+		result = GenerateB();
+	} else if (TType == "C") {
+		result = GenerateC();
+	} else if (TType == "D") {
+		result = GenerateD();
+	} else if (TType == "E") {
+		result = GenerateE();
+	} else if (TType == "F") {
+		result = GenerateF();
+	} else if (TType == "G") {
+		result = GenerateG();
+	} else if (TType == "H") {
+		result = GenerateH();
+	} else if (TType == "I") {
+		result = GenerateI();
+	} else if (TType == "Unguarded_1") {
+		result = UnguardedLevel1();
+	} else if (TType == "Unguarded_2") {
+		result = UnguardedLevel2();
+	} else if (TType == "Unguarded_3") {
+		result = UnguardedLevel3();
+	} else if (TType == "Unguarded_4") {
+		result = UnguardedLevel4();
+	} else if (TType == "Unguarded_5") {
+		result = UnguardedLevel5();
+	} else if (TType == "Unguarded_6") {
+		result = UnguardedLevel6();
+	} else if (TType == "Unguarded_7") {
+		result = UnguardedLevel7();
+	}
+	if (result === "") {
+		result = "(No Treasure)"
+	}		
+	//result = SB.ToString();
+	document.getElementById("contentTreasure").innerHTML = result;
+	document.getElementById("contentcopyTreasure").value = result;
+	return;
+}
+
+
+
+function GenCopper(Roll)
+{
+	return numberWithCommas(Roll * 1000) + " CP";
+}
+
+function GenSilver(Roll)
+{
+	return numberWithCommas(Roll * 1000) + " SP";
+}
+
+function GenGold(Roll)
+{
+	return numberWithCommas(Roll * 1000) + " GP";
+}
+
+function GenGems(Roll)
+{
+	var SB = new StringBuilder();
+	var GT = GemTable();
+	var GemQuantity = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	var DoFirst = true;
+	{
+		var I;
+		for (I = 1; I <= Roll; I++)
+		{
+			var tGem = GemResult(GT.Generate(D(100)));
+			GemQuantity[FindValueIndex(tGem)]++;
+		}
+		SB.Append("Gems: ");
+		I = 0;
+		do
+		{
+			if (GemQuantity[I] > 0)
+			{
+				if (!DoFirst)
+				{
+					SB.Append("; ");
+				}
+				DoFirst = false;
+				if (GemQuantity[I] > 1)
+				{
+					SB.Append(GemQuantity[I]);
+					SB.Append(" x ");
+				}
+				SB.Append(numberWithCommas(FindValue(I)));
+				SB.Append(" GP");
+			}
+			I++;
+		}
+		while (I <= 9);
+		return SB.ToString();
+	}
+}
+
+function GemResult(GemClass)
+{
+	var GemValue = parseInt(GemClass);
+	var HighValues = [
+		10,
+		50,
+		100,
+		500,
+		100,
+		5000,
+		10000,
+		25000,
+		50000,
+		100000,
+		500000
+	];
+	var Roll;
+	do
+	{
+		Roll = _1D6();
+		if (Roll == 1)
+		{
+			GemValue++;
+		}
+		if (GemValue == 10) {
+			break;
+		}
+	}
+	while (Roll == 1);
+	return HighValues[GemValue];
+}
+
+
+function FindValueIndex(GemValue)
+{
+	var tValue = 0;
+	if (GemValue <= 500)
+	{
+		if (GemValue <= 50)
+		{
+			if (GemValue != 10)
+			{
+				if (GemValue == 50)
+				{
+					tValue = 1;
+				}
+			}
+			else
+			{
+				tValue = 0;
+			}
+		}
+		else if (GemValue != 100)
+		{
+			if (GemValue == 500)
+			{
+				tValue = 3;
+			}
+		}
+		else
+		{
+			tValue = 2;
+		}
+	}
+	else if (GemValue <= 5000)
+	{
+		if (GemValue != 1000)
+		{
+			if (GemValue == 5000)
+			{
+				tValue = 5;
+			}
+		}
+		else
+		{
+			tValue = 4;
+		}
+	}
+	else if (GemValue != 10000)
+	{
+		if (GemValue == 50000)
+		{
+			tValue = 9;
+		}
+	}
+	else
+	{
+		tValue = 8;
+	}
+	return tValue;
+}
+
+
+function FindValue(GemIndex)
+{
+	var tValue = 0;
+	switch (GemIndex)
+	{
+	case 0:
+		tValue = 10;
+		break;
+	case 1:
+		tValue = 50;
+		break;
+	case 2:
+		tValue = 100;
+		break;
+	case 3:
+		tValue = 500;
+		break;
+	case 4:
+		tValue = 1000;
+		break;
+	case 5:
+		tValue = 5000;
+		break;
+	case 6:
+		tValue = 10000;
+		break;
+	case 7:
+		tValue = 50000;
+		break;
+	case 8:
+		tValue = 100000;
+		break;
+	case 9:
+		tValue = 500000;
+		break;
+	}
+	return tValue;
+}
+
+function GemTable()
+{
+	var result = new RandomTable();
+	result.Add("0", 1, 10);
+	result.Add("1", 11, 25);
+	result.Add("2", 26, 75);
+	result.Add("3", 76, 90);
+	result.Add("4", 91, 100);
+	return result;
+}
+
+function GenJewelry(Roll)
+{
+	var SB = new StringBuilder();
+	var JT = JewelTable();
+	var JValues = [];
+	var DoAppend = false;
+	SB.Append("Jewels: ");
+	{
+		var I = 0;
+		for (I = 1; I <= Roll; I++)
+		{
+			var JewelClass = JT.Generate(D(100));
+			var JewelValue = JewelGP(JewelClass);
+			if (isNaN(JValues[JewelValue])) {
+				JValues[JewelValue] = 0;
+			}
+			JValues[JewelValue]++;
+		}
+		I = 0;
+		do
+		{
+			if (JValues[I] > 0)
+			{
+				if (DoAppend)
+				{
+					SB.Append("; ");
+				}
+				DoAppend = true;
+				SB.Append(JValues[I]);
+				SB.Append(" x ");
+				SB.Append(numberWithCommas(I));
+			}
+			I++;
+		}
+		while (I <= 10000);
+		return SB.ToString();
+	}
+}
+
+function JewelGP(JewelClass) {
+	var result = 0;
+	if (JewelClass == "A") {
+		result = _3D6() * 100;
+	}
+	if (JewelClass == "B") {
+		result = _1D6() * 1000;
+	}
+	if (JewelClass == "C") {
+		result = D(10) * 1000;
+	}
+	return result;
+}
+
+function JewelTable()
+{
+	var result = new RandomTable();
+	result.Add("A", 1, 20),
+	result.Add("B", 21, 80),
+	result.Add("C", 81, 100)
+	return result;
+}
+
+
+function GenAnyItem(Roll)
+{
+	var SB = new StringBuilder();
+
+	var I = 0;
+	for (I = 1; I <= Roll; I++)
+	{
+		if (I > 1)
+		{
+			SB.Append("; ");
+		}
+		num = D(100);
+		if (num >= 1 && num <= 75)
+		{
+			SB.Append(GenMagicItem(1));
+		}
+		else if (num >= 76 && num <= 100)
+		{
+			SB.Append(GenMaps(1));
+		}
+	}
+	return SB.ToString();
+}
+
+function GenAnyItemNoWeap(Roll)
+{
+	var SB = new StringBuilder();
+	var I = 0;
+	for (I = 1; I <= Roll; I++)
+	{
+		if (I > 1)
+		{
+			SB.Append("; ");
+		}
+		num = D(100);
+		if (num >= 1 && num <= 75)
+		{
+			SB.Append(GenMagicItemNoWeap(1));
+		}
+		else if (num >= 76 && num <= 100)
+		{
+			SB.Append(GenMaps(1));
+		}
+	}
+	return SB.ToString();
+}
+
+function GenMaps(Roll)
+{
+	var SB = new StringBuilder();
+
+	{
+		for (I = 1; I <= Roll; I++)
+		{
+			if (I > 1)
+			{
+				SB.Append("; ");
+			}
+			num = D(100);
+			if (num >= 1 && num <= 60)
+			{
+				SB.Append(TreasureMap(0));
+			}
+			else if (num >= 61 && num <= 90)
+			{
+				SB.Append(MagicMap(0));
+			}
+			else if (num >= 91 && num <= 100)
+			{
+				SB.Append(TreasureMagicMap());
+			}
+		}
+		return SB.ToString();
+	}
+}
+
+function TreasureMap(Roll = 0)
+{
+	var SB = new StringBuilder();
+	if (Roll == 0)
+	{
+		SB.Append("Map To (");
+	}
+	if (Roll == 0)
+	{
+		Roll = D(8);
+	}
+
+	{
+		switch (Roll)
+		{
+		case 1:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP");
+			break;
+		case 2:
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP");
+			break;
+		case 3:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP");
+			break;
+		case 4:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(GenGems(_2D10()));
+			break;
+		case 5:
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(_5D6()));
+			break;
+		case 6:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(D(100)));
+			break;
+		case 7:
+			SB.Append(GenGems(_1D6() * 10));
+			SB.Append("; ");
+			SB.Append(GenJewelry(_2D10()));
+			break;
+		case 8:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(_1D6() * 10));
+			SB.Append("; ");
+			SB.Append(GenJewelry(_2D10()));
+			break;
+		}
+		SB.Append(")");
+		return SB.ToString();
+	}
+}
+
+function MagicMap(Roll = 0)
+{
+	var SB = new StringBuilder();
+	if (Roll == 0)
+	{
+		SB.Append("Map To (");
+	}
+	if (Roll == 0)
+	{
+		Roll = D(8);
+	}
+	num = Roll;
+	if (num >= 1 && num <= 3)
+	{
+		SB.Append(MagicItem(false));
+	}
+	else if (num >= 4 && num <= 5)
+	{
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicItem(false));
+	}
+	else if (num == 6)
+	{
+		SB.Append(MagicItem(true));
+		SB.Append("; ");
+		SB.Append(MagicItem(true));
+		SB.Append("; ");
+		SB.Append(MagicItem(true));
+	}
+	else if (num == 7)
+	{
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicPotion(false));
+	}
+	else if (num == 8)
+	{
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicItem(false));
+		SB.Append("; ");
+		SB.Append(MagicPotion(false));
+		SB.Append("; ");
+		SB.Append(MagicScroll());
+	}
+	SB.Append(")");
+	return SB.ToString();
+}
+
+function TreasureMagicMap()
+{
+	var SB = new StringBuilder();
+	Roll = D(8);
+	SB.Append("Map To (");
+	switch (Roll)
+	{
+	case 1:
+		SB.Append(TreasureMap(1));
+		SB.Append("; ");
+		SB.Append(MagicMap(1));
+		break;
+	case 2:
+		SB.Append(TreasureMap(2));
+		SB.Append("; ");
+		SB.Append(MagicMap(1));
+		break;
+	case 3:
+		SB.Append(TreasureMap(3));
+		SB.Append("; ");
+		SB.Append(MagicMap(4));
+		break;
+	case 4:
+		SB.Append(TreasureMap(7));
+		SB.Append("; ");
+		SB.Append(MagicMap(6));
+		break;
+	case 5:
+		SB.Append(TreasureMap(5));
+		SB.Append("; ");
+		SB.Append(MagicMap(4));
+		break;
+	case 6:
+		SB.Append(TreasureMap(1));
+		SB.Append("; ");
+		SB.Append(MagicMap(1));
+		break;
+	case 7:
+		SB.Append(TreasureMap(6));
+		SB.Append("; ");
+		SB.Append(MagicMap(8));
+		break;
+	case 8:
+		SB.Append(TreasureMap(8));
+		SB.Append("; ");
+		SB.Append(MagicMap(7));
+		break;
+	}
+	SB.Append(")");
+	return SB.ToString();
+}
+
+
+class StringBuilder {
+	constructor(){
+		this.stringresult = "";
+	}
+	
+	Test() {
+		this.stringresult = "Test Done";
+		return;
+	}
+	
+	Append(stringtext){
+		this.stringresult = this.stringresult + stringtext;
+	}
+	
+	ToString(){
+		return this.stringresult;
+	}
+}
+
+class RandomTable {
+	constructor() {
+		this.rEntries = [];
+		this.nEntries = 0;
+	}
+	Add(value, loVal, hiVal){
+		var tEntry = new RandomEntry(value, loVal, hiVal);
+		this.rEntries.push(tEntry);
+		this.nEntries++;
+	}
+	
+	Generate(Roll){
+		var I = 0;
+		var result = "";
+		for (I = 0; I < this.nEntries; I++)
+		{
+			if (this.rEntries[I].IsBetween(Roll)) {
+				result = this.rEntries[I].value;
+			}
+		}
+		return result;
+	}
+	
+}
+
+class RandomEntry {
+	constructor(value, loVal, hiVal) {
+		this.value = value;
+		this.loVal = loVal;
+		this.hiVal = hiVal;
+	}
+
+	
+	IsBetween(aValue){
+		var result = false;
+		if (aValue >= this.loVal) {
+			if (aValue <= this.hiVal) {
+				result = true;
+			}
+		}
+		return result;
+	}
+}
+
+function TreasureMap(Roll)
+{
+	var SB = new StringBuilder();
+	if (Roll == 0)
+	{
+		SB.Append("Map To (");
+	}
+	if (Roll == 0)
+	{
+		Roll = D(8);
+	}
+
+	{
+		switch (Roll)
+		{
+		case 1:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP");
+			break;
+		case 2:
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP");
+			break;
+		case 3:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP");
+			break;
+		case 4:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(GenGems(_2D10()));
+			break;
+		case 5:
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(_5D6()));
+			break;
+		case 6:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(D(100)));
+			break;
+		case 7:
+			SB.Append(GenGems(_1D6() * 10));
+			SB.Append("; ");
+			SB.Append(GenJewelry(_2D10()));
+			break;
+		case 8:
+			SB.Append(numberWithCommas(D(4) * 10000));
+			SB.Append(" SP; ");
+			SB.Append(numberWithCommas(_5D6()));
+			SB.Append(" GP; ");
+			SB.Append(GenGems(_1D6() * 10));
+			SB.Append("; ");
+			SB.Append(GenJewelry(_2D10()));
+			break;
+		}
+		SB.Append(")");
+		return SB.ToString();
+	}
+}
+
+function GenMagicItem(Roll)
+{
+	var SB = new StringBuilder();
+	
+	{
+		for (I = 1; I <= Roll; I++)
+		{
+			if (I > 1)
+			{
+				SB.Append("; ");
+			}
+			SB.Append(MagicItem(false));
+		}
+		return SB.ToString();
+	}
+}
+
+function GenMagicItemNoWeap(Roll)
+{
+	var SB = new StringBuilder();
+	
+	{
+		for (I = 1; I <= Roll; I++)
+		{
+			if (I > 1)
+			{
+				SB.Append("; ");
+			}
+			SB.Append(MagicItem(true));
+		}
+		return SB.ToString();
+	}
+}
+
+function GenMagicWar(Roll)
+{
+	var SB = new StringBuilder();
+	
+	{
+		for (I = 1; I <= Roll; I++)
+		{
+			if (I > 1)
+			{
+				SB.Append("; ");
+			}
+			var num = D(8);
+			if (num >= 1 && num <= 3)
+			{
+				SB.Append(MagicSword());
+			}
+			else if (num >= 4 && num <= 6)
+			{
+				SB.Append(MagicArmor());
+			}
+			else if (num >= 7 && num <= 8)
+			{
+				SB.Append(MagicMiscWeapons());
+			}
+		}
+		return SB.ToString();
+	}
+}
+
+function MagicItem(NoSwords)
+{
+	if (NoSwords === undefined) {
+		NoSwords = false;
+	}
+	var Roll = D(100);
+	var num = Roll;
+	var aMagicItem = "";
+	if (num >= 1 && num <= 20)
+	{
+		if (NoSwords)
+		{
+			aMagicItem = MagicItem(NoSwords);
+		}
+		else
+		{
+			aMagicItem = MagicSword();
+		}
+	}
+	else if (num >= 21 && num <= 35)
+	{
+		aMagicItem = MagicArmor();
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		if (NoSwords)
+		{
+			aMagicItem = MagicItem(NoSwords);
+		}
+		else
+		{
+			aMagicItem = MagicMiscWeapons();
+		}
+	}
+	else if (num >= 41 && num <= 65)
+	{
+		aMagicItem = MagicPotion(false);
+	}
+	else if (num >= 66 && num <= 85)
+	{
+		aMagicItem = MagicScroll();
+	}
+	else if (num >= 86 && num <= 90)
+	{
+		aMagicItem = MagicRing(false);
+	}
+	else if (num >= 91 && num <= 95)
+	{
+		aMagicItem = MagicWand();
+	}
+	else if (num >= 96 && num <= 100)
+	{
+		aMagicItem = MagicMisc();
+	}
+	else
+	{
+		aMagicItem = "*NOTHING*" + Roll;
+	}
+	return aMagicItem;
+}
+
+function MagicSword()
+{
+	var Align = "";
+	var Primary = "";
+	var Ego = 0;
+	var Purpose = "";
+	var SB = new StringBuilder();
+	var num = D(100);
+	if (num >= 1 && num <= 65)
+	{
+		Align = "Lawful";
+	}
+	else if (num >= 66 && num <= 90)
+	{
+		Align = "Neutral";
+	}
+	else if (num >= 91 && num <= 100)
+	{
+		Align = "Chaotic";
+	}
+	var num2 = D(12);
+	
+	{
+		if (num2 >= 1 && num2 <= 6)
+		{
+			Primary = "";
+		}
+		else if (num2 == 7)
+		{
+			Primary = MagicSwordPrimary(false) + ", Empathy";
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		else if (num2 == 8)
+		{
+			SB = new StringBuilder();
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", Empathy");
+			Primary = SB.ToString();
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		else if (num2 == 9)
+		{
+			SB = new StringBuilder();
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", Empathy");
+			Primary = SB.ToString();
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		else if (num2 == 10)
+		{
+			SB = new StringBuilder();
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append("Speaks ");
+			SB.Append(MagicSwordLang(false));
+			SB.Append(" Languages");
+			Primary = SB.ToString();
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		else if (num2 == 11)
+		{
+			SB = new StringBuilder();
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append("Speaks ");
+			SB.Append(MagicSwordLang(false).ToString());
+			SB.Append(" Languages");
+			SB.Append(", Reads Magic");
+			Primary = SB.ToString();
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		else if (num2 == 12)
+		{
+			SB = new StringBuilder();
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(false));
+			SB.Append(", ");
+			SB.Append("Speaks ");
+			SB.Append(MagicSwordLang(false).ToString());
+			SB.Append(" Languages");
+			SB.Append(", Reads Magic");
+			SB.Append(", Telepathy");
+			Primary = SB.ToString();
+			Ego = D(12) + MagicSwordEgoBonus(Primary);
+		}
+		if (D(100) >= 91)
+		{
+			SB = new StringBuilder();
+			if (Align == "Lawful")
+			{
+				Purpose = MagicSwordPurposeLaw() + ", Paralyze Chaos";
+			}
+			else if (Align == "Neutral")
+			{
+				Purpose = MagicSwordPurposeNeutral() + ", +1 to all saves";
+			}
+			else if (Align == "Chaotic")
+			{
+				Purpose = MagicSwordPurposeChaos() + ", Paralyze Law";
+			}
+		}
+		SB = new StringBuilder();
+		SB.Append(Align);
+		SB.Append(" ");
+		SB.Append(MagicSwordType());
+		if (Primary != "")
+		{
+			SB.Append(" with ");
+			SB.Append(Primary);
+			if (Primary != "")
+			{
+				SB.Append("; ");
+				SB.Append(Purpose);
+			}
+		}
+		else if (Primary != "")
+		{
+			SB.Append(" with ");
+			SB.Append(Purpose);
+		}
+		if (Ego > 0)
+		{
+			if (Purpose != "") SB.Append(";");
+			SB.Append(" Ego ");
+			SB.Append(Ego);
+		}
+		return SB.ToString();
+	}
+}
+
+function MagicSwordPurposeLaw()
+{
+	var Roll = D(6);
+	var MagicSwordPurposeLaw;
+	switch (Roll)
+	{
+	case 1:
+		MagicSwordPurposeLaw = "Slay Chaotic M-U";
+		break;
+	case 2:
+		MagicSwordPurposeLaw = "Slay Chaotic Clerics";
+		break;
+	case 3:
+		MagicSwordPurposeLaw = "Slay Chaotic Fighters";
+		break;
+	case 4:
+		MagicSwordPurposeLaw = "Slay Chaotic Monsters";
+		break;
+	case 5:
+		MagicSwordPurposeLaw = "Defeat All Chaos";
+		break;
+	case 6:
+		MagicSwordPurposeLaw = "Slay Chaotic Thieves";
+		break;
+	default:
+		MagicSwordPurposeLaw = "*NOTHING*" + Roll;
+		break;
+	}
+	return MagicSwordPurposeLaw;
+}
+
+function MagicSwordPurposeChaos()
+{
+	var Roll = D(5);
+	var MagicSwordPurposeChaos = "";
+	switch (Roll)
+	{
+	case 1:
+		MagicSwordPurposeChaos = "Slay Lawful M-U";
+		break;
+	case 2:
+		MagicSwordPurposeChaos = "Slay Lawful Clerics";
+		break;
+	case 3:
+		MagicSwordPurposeChaos = "Slay Lawful Fighters";
+		break;
+	case 4:
+		MagicSwordPurposeChaos = "Slay Lawful Monsters";
+		break;
+	case 5:
+		MagicSwordPurposeChaos = "Defeat All Lawful";
+		break;
+	default:
+		MagicSwordPurposeChaos = "*NOTHING*" + Roll;
+		break;
+	}
+	return MagicSwordPurposeChaos;
+}
+
+function MagicSwordPurposeNeutral()
+{
+	var Roll = D(6);
+	var MagicSwordPurposeNeutral = "";
+	switch (Roll)
+	{
+	case 1:
+		MagicSwordPurposeNeutral = "Slay All M-U";
+		break;
+	case 2:
+		MagicSwordPurposeNeutral = "Slay All Clerics";
+		break;
+	case 3:
+		MagicSwordPurposeNeutral = "Slay All Fighters";
+		break;
+	case 4:
+		MagicSwordPurposeNeutral = "Slay All Monsters";
+		break;
+	case 5:
+		MagicSwordPurposeNeutral = "Defeat All Law & Chaos";
+		break;
+	case 6:
+		MagicSwordPurposeNeutral = "Slay All Thieves";
+		break;
+	default:
+		MagicSwordPurposeNeutral = "*NOTHING*" + Roll;
+		break;
+	}
+	return MagicSwordPurposeNeutral;
+}
+
+function MagicSwordPrimary(RollTwo)
+{
+	if (RollTwo === undefined) {
+		RollTwo = false;
+	}
+
+	var Roll = D(100);
+	var SB = new StringBuilder();
+	var num = Roll;
+	var aMagicSwordPrimary;
+	if (num >= 1 && num <= 15)
+	{
+		aMagicSwordPrimary = "Detect Shifting Walls & Rooms";
+	}
+	else if (num >= 16 && num <= 30)
+	{
+		aMagicSwordPrimary = "Detect Sloping Passages";
+	}
+	else if (num >= 31 && num <= 40)
+	{
+		aMagicSwordPrimary = "Locate Secret Doors";
+	}
+	else if (num >= 41 && num <= 50)
+	{
+		aMagicSwordPrimary = "Detect Traps";
+	}
+	else if (num >= 51 && num <= 60)
+	{
+		aMagicSwordPrimary = "See Invisible";
+	}
+	else if (num >= 61 && num <= 64)
+	{
+		aMagicSwordPrimary = "Detect Evil";
+	}
+	else if (num >= 64 && num <= 68)
+	{
+		aMagicSwordPrimary = "Detect Gold";
+	}
+	else if (num >= 69 && num <= 70)
+	{
+		aMagicSwordPrimary = "Detect Gold & Evil";
+	}
+	else if (num >= 71 && num <= 80)
+	{
+		aMagicSwordPrimary = "Detect Metal";
+	}
+	else if (num >= 81 && num <= 90)
+	{
+		aMagicSwordPrimary = "Detect Magic";
+	}
+	else if (num >= 91 && num <= 95)
+	{
+		aMagicSwordPrimary = "Detect Gems";
+	}
+	else if (num >= 96 && num <= 99)
+	{
+		if (RollTwo)
+		{
+			aMagicSwordPrimary = MagicSwordPrimary(true);
+		}
+		else
+		{
+			SB.Append(MagicSwordPrimary(true));
+			SB.Append(", ");
+			SB.Append(MagicSwordPrimary(true));
+			aMagicSwordPrimary = SB.ToString();
+		}
+	}
+	else if (num == 0)
+	{
+		aMagicSwordPrimary = MagicSwordExtraOrdinary(false);
+	}
+	else
+	{
+		aMagicSwordPrimary = "*NOTHING*" + Roll;
+	}
+	return aMagicSwordPrimary;
+}
+
+function MagicSwordEgoBonus(Primary)
+{
+	
+	{
+		var TempI = 0;
+		if (Primary.indexOf("Clairaudience") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Clairvoyance") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("ESP") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Telepathy") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Telekenesis") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Teleportation") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("X-Ray Vision") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Generate Illusion") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Levitation") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Flying") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Healing") > 0)
+		{
+			TempI++;
+		}
+		if (Primary.indexOf("Enhanced Strength") > 0)
+		{
+			TempI++;
+		}
+		return TempI;
+	}
+}
+
+function MagicSwordExtraOrdinary(TakeRoll)
+{
+	if (TakeRoll === undefined) {
+		TakeRoll = false;
+	}
+	var Roll = D(100);
+	var SB = new StringBuilder();
+	var num = Roll;
+	var MagicSwordExtraOrdinary;
+	if (num >= 1 && num <= 10)
+	{
+		MagicSwordExtraOrdinary = "Clairaudience";
+	}
+	else if (num >= 11 && num <= 20)
+	{
+		MagicSwordExtraOrdinary = "Clairvoyance";
+	}
+	else if (num >= 21 && num <= 30)
+	{
+		MagicSwordExtraOrdinary = "ESP";
+	}
+	else if (num >= 31 && num <= 40)
+	{
+		MagicSwordExtraOrdinary = "Telepathy";
+	}
+	else if (num >= 41 && num <= 50)
+	{
+		MagicSwordExtraOrdinary = "Telekenesis";
+	}
+	else if (num >= 51 && num <= 59)
+	{
+		MagicSwordExtraOrdinary = "Teleportation";
+	}
+	else if (num >= 60 && num <= 68)
+	{
+		MagicSwordExtraOrdinary = "X-Ray Vision";
+	}
+	else if (num >= 69 && num <= 77)
+	{
+		MagicSwordExtraOrdinary = "Generate Illusion";
+	}
+	else if (num >= 78 && num <= 82)
+	{
+		MagicSwordExtraOrdinary = "Levitation";
+	}
+	else if (num >= 83 && num <= 87)
+	{
+		MagicSwordExtraOrdinary = "Flying";
+	}
+	else if (num >= 88 && num <= 92)
+	{
+		MagicSwordExtraOrdinary = "Healing";
+	}
+	else if (num >= 93 && num <= 97)
+	{
+		MagicSwordExtraOrdinary = "Enhanced Strength";
+	}
+	else if (num >= 98 && num <= 99)
+	{
+		if (TakeRoll)
+		{
+			MagicSwordExtraOrdinary = MagicSwordExtraOrdinary(true);
+		}
+		else
+		{
+			SB.Append(MagicSwordExtraOrdinary(true));
+			SB.Append(", ");
+			SB.Append(MagicSwordExtraOrdinary(true));
+			MagicSwordExtraOrdinary = SB.ToString();
+		}
+	}
+	else if (num == 100)
+	{
+		if (TakeRoll)
+		{
+			MagicSwordExtraOrdinary = MagicSwordExtraOrdinary(true);
+		}
+		else
+		{
+			SB.Append(MagicSwordExtraOrdinary(true));
+			SB.Append(", ");
+			SB.Append(MagicSwordExtraOrdinary(true));
+			SB.Append(", ");
+			SB.Append(MagicSwordExtraOrdinary(true));
+			MagicSwordExtraOrdinary = SB.ToString();
+		}
+	}
+	else
+	{
+		MagicSwordExtraOrdinary = "*NOTHING*" + Roll;
+	}
+	return MagicSwordExtraOrdinary;
+}
+
+function MagicSwordLang(TakeRoll)
+{
+	if (TakeRoll === undefined) {
+		TakeRoll = false;
+	}
+	var num = D(100);
+	var aMagicSwordLang;
+	if (num >= 1 && num <= 50)
+	{
+		aMagicSwordLang = 1;
+	}
+	else if (num >= 51 && num <= 70)
+	{
+		aMagicSwordLang = 2;
+	}
+	else if (num >= 71 && num <= 85)
+	{
+		aMagicSwordLang = 3;
+	}
+	else if (num >= 86 && num <= 95)
+	{
+		aMagicSwordLang = 4;
+	}
+	else if (num >= 96 && num <= 99)
+	{
+		aMagicSwordLang = 5;
+	}
+	else if (num == 100)
+	{
+		if (TakeRoll)
+		{
+			aMagicSwordLang = MagicSwordLang(true);
+		}
+		else
+		{
+			aMagicSwordLang = (MagicSwordLang(true) + MagicSwordLang(true));
+		}
+	}
+	else
+	{
+		aMagicSwordLang = 0;
+	}
+	return aMagicSwordLang;
+}
+
+function MagicSwordType()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var aMagicSwordType = "";
+	if (num >= 1 && num <= 30)
+	{
+		aMagicSwordType = "Sword +1";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		aMagicSwordType = "Sword +1, +2 vs. Lycanthropes";
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		aMagicSwordType = "Sword +1, +2 vs. M-U & Enchanted";
+	}
+	else if (num >= 41 && num <= 45)
+	{
+		aMagicSwordType = "Sword +1, Locate Objects";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		if (D(6) <= 3)
+		{
+			aMagicSwordType = "Sword +1, +3 vs Trolls";
+		}
+		else
+		{
+			aMagicSwordType = "Sword +1, +3 vs Clerics";
+		}
+	}
+	else
+	{
+		if (num >= 51 && num <= 55)
+		{
+			Roll = D(10);
+			var num2 = Roll;
+			if (num2 >= 1 && num2 <= 4)
+			{
+				aMagicSwordType = "Sword, Flaming +1";
+				return aMagicSwordType;
+			}
+			if (num2 == 5)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +2 vs Trolls";
+				return aMagicSwordType;
+			}
+			if (num2 == 6)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +2 vs Pegasi";
+				return aMagicSwordType;
+			}
+			if (num2 == 7)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +2 vs Hippogriffs";
+				return aMagicSwordType;
+			}
+			if (num2 == 8)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +2 vs Rocs";
+				return aMagicSwordType;
+			}
+			if (num2 == 9)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +3 vs Ents";
+				return aMagicSwordType;
+			}
+			if (num2 == 10)
+			{
+				aMagicSwordType = "Sword, Flaming +1, +3 vs Undead";
+				return aMagicSwordType;
+			}
+		}
+		else
+		{
+			if (num >= 56 && num <= 60)
+			{
+				aMagicSwordType = "Sword +1 w/ " + (D(4) + D(4)) + " Wishes";
+				return aMagicSwordType;
+			}
+			if (num >= 61 && num <= 65)
+			{
+				aMagicSwordType = "Sword +1, +3 vs Dragons";
+				return aMagicSwordType;
+			}
+			if (num >= 66 && num <= 68)
+			{
+				aMagicSwordType = "Sword +2";
+				return aMagicSwordType;
+			}
+			if (num >= 69 && num <= 70)
+			{
+				aMagicSwordType = "Sword +2, Charm Person";
+				return aMagicSwordType;
+			}
+			if (num >= 71 && num <= 72)
+			{
+				aMagicSwordType = "Sword +3";
+				return aMagicSwordType;
+			}
+			if (num == 73)
+			{
+				aMagicSwordType = "Sword, Drain Life";
+				return aMagicSwordType;
+			}
+			if (num == 74)
+			{
+				aMagicSwordType = "Sword +2, Drain Life";
+				return aMagicSwordType;
+			}
+			if (num == 75)
+			{
+				aMagicSwordType = "Sword +4";
+				return aMagicSwordType;
+			}
+			if (num == 76)
+			{
+				aMagicSwordType = "Holy Sword +5";
+				return aMagicSwordType;
+			}
+			if (num == 77)
+			{
+				aMagicSwordType = "Sword of Cold +3";
+				return aMagicSwordType;
+			}
+			if (num == 78)
+			{
+				aMagicSwordType = "Sword +5 vs Fire Creatures";
+				return aMagicSwordType;
+			}
+			if (num >= 79 && num <= 82)
+			{
+				aMagicSwordType = "Dragon Slaying Sword +2";
+				return aMagicSwordType;
+			}
+			if (num == 83)
+			{
+				aMagicSwordType = "Sword +1, Cursed";
+				return aMagicSwordType;
+			}
+			if (num >= 84 && num <= 97)
+			{
+				aMagicSwordType = "Sword -2, Cursed";
+				return aMagicSwordType;
+			}
+			if (num == 98)
+			{
+				aMagicSwordType = "Dancing Sword";
+				return aMagicSwordType;
+			}
+			if (num == 99)
+			{
+				aMagicSwordType = "Sword of Sharpness";
+				return aMagicSwordType;
+			}
+			if (num == 100)
+			{
+				aMagicSwordType = "Vorpal Blade";
+				return aMagicSwordType;
+			}
+		}
+		aMagicSwordType = "*NOTHING*" + Roll;
+	}
+	return aMagicSwordType;
+}
+
+function MagicMiscWeapons()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMiscWeapons;
+	if (num >= 1 && num <= 15)
+	{
+		MagicMiscWeapons = "10 Magic Arrows +1";
+	}
+	else if (num >= 16 && num <= 25)
+	{
+		MagicMiscWeapons = _3D10() + " Magic Arrows +1";
+	}
+	else if (num >= 26 && num <= 29)
+	{
+		MagicMiscWeapons = _2D6() + " Magic Arrows +2";
+	}
+	else if (num == 30)
+	{
+		MagicMiscWeapons = D(8) + " Magic Arrows +3";
+	}
+	else if (num == 31)
+	{
+		MagicMiscWeapons = "Arrow of Slaying";
+	}
+	else if (num >= 32 && num <= 34)
+	{
+		MagicMiscWeapons = _2D8() + " Magic Bolts +2";
+	}
+	else if (num >= 35 && num <= 45)
+	{
+		MagicMiscWeapons = "Dagger +1 vs Man-Sized, +2 vs Goblins/Kobolds";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		MagicMiscWeapons = "Dagger +2 vs Man-Sized, +3 vs Goblins/Kobolds";
+	}
+	else if (num >= 51 && num <= 55)
+	{
+		MagicMiscWeapons = "Magic Bow";
+	}
+	else if (num >= 56 && num <= 57)
+	{
+		MagicMiscWeapons = "Crossbow of Accuracy +3";
+	}
+	else if (num >= 58 && num <= 59)
+	{
+		MagicMiscWeapons = "Crossbow of Speed";
+	}
+	else if (num >= 60 && num <= 61)
+	{
+		MagicMiscWeapons = "Crossbow of Distance";
+	}
+	else if (num >= 62 && num <= 66)
+	{
+		MagicMiscWeapons = "Axe +1";
+	}
+	else if (num == 67)
+	{
+		MagicMiscWeapons = "Axe +2";
+	}
+	else if (num == 68)
+	{
+		MagicMiscWeapons = "Axe +3";
+	}
+	else if (num >= 69 && num <= 80)
+	{
+		MagicMiscWeapons = "Mace +2";
+	}
+	else if (num == 81)
+	{
+		MagicMiscWeapons = "Mace of Disruption";
+	}
+	else if (num >= 82 && num <= 86)
+	{
+		MagicMiscWeapons = "War Hammer +1";
+	}
+	else if (num >= 87 && num <= 89)
+	{
+		MagicMiscWeapons = "War Hammer +2";
+	}
+	else if (num == 90)
+	{
+		MagicMiscWeapons = "War Hammer +3, 6\" Throwing Range w/ Return";
+	}
+	else if (num >= 91 && num <= 95)
+	{
+		MagicMiscWeapons = "Spear +1";
+	}
+	else if (num == 96)
+	{
+		MagicMiscWeapons = "Spear +2";
+	}
+	else if (num == 97)
+	{
+		MagicMiscWeapons = "Spear +3";
+	}
+	else if (num >= 98 && num <= 100)
+	{
+		MagicMiscWeapons = "Cursed Spear of Backbiting";
+	}
+	else
+	{
+		MagicMiscWeapons = "*NOTHING*" + Roll;
+	}
+	return MagicMiscWeapons;
+}
+
+function MagicArmor()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicArmor;
+	if (num >= 1 && num <= 20)
+	{
+		MagicArmor = "Shield +1";
+	}
+	else if (num >= 21 && num <= 40)
+	{
+		MagicArmor = "Armor +1";
+	}
+	else if (num >= 41 && num <= 50)
+	{
+		MagicArmor = "Armor +1, Shield +1";
+	}
+	else if (num >= 51 && num <= 57)
+	{
+		MagicArmor = "Shield +2";
+	}
+	else if (num >= 58 && num <= 64)
+	{
+		MagicArmor = "Armor +2";
+	}
+	else if (num >= 65 && num <= 70)
+	{
+		MagicArmor = "Armor +2, Shield +2";
+	}
+	else if (num >= 71 && num <= 73)
+	{
+		MagicArmor = "Shield +3";
+	}
+	else if (num >= 74 && num <= 76)
+	{
+		MagicArmor = "Armor +3";
+	}
+	else if (num >= 77 && num <= 78)
+	{
+		MagicArmor = "Armor +3, Shield +3";
+	}
+	else if (num >= 79 && num <= 80)
+	{
+		MagicArmor = "Shield +4";
+	}
+	else if (num >= 81 && num <= 82)
+	{
+		MagicArmor = "Armor +4";
+	}
+	else if (num == 83)
+	{
+		MagicArmor = "Armor +4, Shield +4";
+	}
+	else if (num >= 84 && num <= 85)
+	{
+		MagicArmor = "Shield +5";
+	}
+	else if (num == 86)
+	{
+		MagicArmor = "Armor +5";
+	}
+	else if (num == 87)
+	{
+		MagicArmor = "Armor +5, Shield +5";
+	}
+	else if (num >= 88 && num <= 93)
+	{
+		MagicArmor = "Shield of Missile Attract -1";
+	}
+	else if (num >= 94 && num <= 99)
+	{
+		MagicArmor = "Armor of Vulnerability";
+	}
+	else if (num == 100)
+	{
+		MagicArmor = "Armor of Etheralness";
+	}
+	else
+	{
+		MagicArmor = "*NOTHING*" + Roll;
+	}
+	return MagicArmor;
+}
+
+function MagicPotion(Delusion)
+{
+	if (Delusion === undefined) {
+		Delusion = false;
+	}
+	var SB = new StringBuilder();
+	SB.Append("Potion of ");
+	var num = D(100);
+	if (num >= 1 && num <= 3)
+	{
+		SB.Append("Growth");
+	}
+	else if (num >= 4 && num <= 6)
+	{
+		SB.Append("Diminuation");
+	}
+	else if (num >= 7 && num <= 10)
+	{
+		switch (D(6))
+		{
+		case 1:
+			SB.Append("Hill Giant");
+			break;
+		case 2:
+			SB.Append("Stone Giant");
+			break;
+		case 3:
+			SB.Append("Frost Giant");
+			break;
+		case 4:
+			SB.Append("First Giant");
+			break;
+		case 5:
+			SB.Append("Cloud Giant");
+			break;
+		case 6:
+			SB.Append("Storm Giant");
+			break;
+		}
+	}
+	else if (num >= 11 && num <= 13)
+	{
+		SB.Append("Invisibility");
+	}
+	else if (num >= 14 && num <= 16)
+	{
+		SB.Append("Gaseous Form");
+	}
+	else if (num >= 17 && num <= 19)
+	{
+		SB.Append("Polymorph(Self)");
+	}
+	else if (num >= 20 && num <= 23)
+	{
+		SB.Append("Speed");
+	}
+	else if (num >= 24 && num <= 26)
+	{
+		SB.Append("Levitation");
+	}
+	else if (num >= 27 && num <= 29)
+	{
+		SB.Append("Flying");
+	}
+	else if (num >= 30 && num <= 32)
+	{
+		SB.Append("ESP");
+	}
+	else if (num >= 33 && num <= 35)
+	{
+		if (Delusion)
+		{
+			SB.Append("ESP");
+		}
+		else
+		{
+			SB.Append("Delusion, ");
+			SB.Append(MagicPotion(true));
+		}
+	}
+	else if (num >= 36 && num <= 39)
+	{
+		SB.Append("Healing");
+	}
+	else if (num >= 40 && num <= 42)
+	{
+		SB.Append("Longevity");
+	}
+	else if (num >= 43 && num <= 45)
+	{
+		SB.Append("Extra-healing");
+	}
+	else if (num >= 46 && num <= 49)
+	{
+		SB.Append("Oil of Slipperiness");
+	}
+	else if (num >= 50 && num <= 52)
+	{
+		SB.Append("Clairvoyance");
+	}
+	else if (num >= 53 && num <= 55)
+	{
+		SB.Append("Clairaudience");
+	}
+	else if (num >= 56 && num <= 58)
+	{
+		SB.Append("Animal Control");
+	}
+	else if (num >= 59 && num <= 63)
+	{
+		SB.Append("Undead Control");
+	}
+	else if (num >= 64 && num <= 66)
+	{
+		SB.Append("Plant Control");
+	}
+	else if (num >= 67 && num <= 69)
+	{
+		SB.Append("Human Control");
+	}
+	else if (num >= 70 && num <= 72)
+	{
+		SB.Append("Control ");
+		switch (D(6))
+		{
+		case 1:
+			SB.Append("Hill Giant");
+			break;
+		case 2:
+			SB.Append("Stone Giant");
+			break;
+		case 3:
+			SB.Append("Frost Giant");
+			break;
+		case 4:
+			SB.Append("First Giant");
+			break;
+		case 5:
+			SB.Append("Cloud Giant");
+			break;
+		case 6:
+			SB.Append("Storm Giant");
+			break;
+		}
+	}
+	else if (num >= 73 && num <= 75)
+	{
+		SB.Append("Control ");
+		switch (D(10))
+		{
+		case 1:
+			SB.Append("White Dragon");
+			break;
+		case 2:
+			SB.Append("Black Dragon");
+			break;
+		case 3:
+			SB.Append("Green Dragon");
+			break;
+		case 4:
+			SB.Append("Blue Dragon");
+			break;
+		case 5:
+			SB.Append("Red Dragon");
+			break;
+		case 6:
+			SB.Append("Brass Dragon");
+			break;
+		case 7:
+			SB.Append("Copper Dragon");
+			break;
+		case 8:
+			SB.Append("Bronze Dragon");
+			break;
+		case 9:
+			SB.Append("Silver Dragon");
+			break;
+		case 10:
+			SB.Append("Gold Dragon");
+			break;
+		}
+	}
+	else if (num >= 76 && num <= 79)
+	{
+		SB.Append("Poison");
+	}
+	else if (num >= 80 && num <= 83)
+	{
+		SB.Append("Invulnerability");
+	}
+	else if (num >= 84 && num <= 87)
+	{
+		SB.Append("Fire Resistance");
+	}
+	else if (num >= 88 && num <= 90)
+	{
+		SB.Append("Treasure Finding");
+	}
+	else if (num >= 91 && num <= 94)
+	{
+		SB.Append("Heroism");
+	}
+	else if (num >= 95 && num <= 97)
+	{
+		SB.Append("Super-Heroism");
+	}
+	else if (num >= 98 && num <= 100)
+	{
+		SB = new StringBuilder();
+		SB.Append("Oil of Etherealness");
+	}
+	return SB.ToString();
+}
+
+function MagicRing(Delusion)
+{
+	if (Delusion === undefined) {
+		Delusion = false;
+	}
+	var SB = new StringBuilder();
+	SB.Append("Ring of ");
+	var num = D(100);
+	if (num >= 1 && num <= 5)
+	{
+		SB.Append("Invisbility");
+	}
+	else if (num >= 6 && num <= 10)
+	{
+		SB.Append("Mammal Control");
+	}
+	else if (num >= 11 && num <= 15)
+	{
+		SB.Append("Human Control");
+	}
+	else if (num >= 16 && num <= 30)
+	{
+		SB.Append("Weakness");
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		SB.Append("Protection +1");
+	}
+	else if (num == 36)
+	{
+		SB.Append("Protection +3");
+	}
+	else if (num >= 37 && num <= 40)
+	{
+		SB.Append("3 Wishes");
+	}
+	else if (num >= 41 && num <= 60)
+	{
+		if (Delusion)
+		{
+			SB.Append("3 Wishes");
+		}
+		else
+		{
+			SB.Append("Delusion, ");
+			SB.Append(MagicRing(true));
+		}
+	}
+	else if (num >= 61 && num <= 65)
+	{
+		SB.Append("Water Walking");
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		SB.Append("Fire Resistance");
+	}
+	else if (num >= 71 && num <= 72)
+	{
+		SB.Append("Protection +2, 5' Radius");
+	}
+	else if (num >= 73 && num <= 74)
+	{
+		SB.Append("Regeneration");
+	}
+	else if (num >= 75 && num <= 76)
+	{
+		SB.Append("Djinn Summoning");
+	}
+	else if (num >= 77 && num <= 78)
+	{
+		SB.Append("Shooting Stars");
+	}
+	else if (num >= 79 && num <= 80)
+	{
+		SB.Append("X-Ray Vision");
+	}
+	else if (num >= 81 && num <= 82)
+	{
+		SB.Append("Telekinesis");
+	}
+	else if (num >= 83 && num <= 95)
+	{
+		SB.Append("Contrariness");
+	}
+	else if (num >= 96 && num <= 97)
+	{
+		SB.Append("Spell Turning");
+	}
+	else if (num >= 98 && num <= 99)
+	{
+		SB.Append("Spell Storing");
+	}
+	else if (num == 100)
+	{
+		SB.Append("Many Wishes");
+	}
+	return SB.ToString();
+}
+
+function MagicScroll()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicScroll;
+	if (num >= 1 && num <= 20)
+	{
+		if (D(4) == 1)
+		{
+			MagicScroll = "Scroll of 1 Cleric Spell";
+		}
+		else
+		{
+			MagicScroll = "Scroll of 1 Wizard Spell";
+		}
+	}
+	else if (num >= 21 && num <= 35)
+	{
+		if (D(4) == 1)
+		{
+			MagicScroll = "Scroll of 2 Cleric Spells";
+		}
+		else
+		{
+			MagicScroll = "Scroll of 2 Wizard Spells";
+		}
+	}
+	else if (num >= 36 && num <= 45)
+	{
+		if (D(4) == 1)
+		{
+			MagicScroll = "Scroll of 3 Cleric Spells";
+		}
+		else
+		{
+			MagicScroll = "Scroll of 3 Wizard Spells";
+		}
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		if (D(4) == 1)
+		{
+			MagicScroll = "Scroll of 7 Cleric Spells";
+		}
+		else
+		{
+			MagicScroll = "Scroll of 7 Wizard Spells";
+		}
+	}
+	else
+	{
+		if (num >= 51 && num <= 60)
+		{
+			Roll = D(8);
+			var num2 = Roll;
+			if (num2 >= 1 && num2 <= 2)
+			{
+				MagicScroll = "Cursed Scroll, Summon Monster";
+				return MagicScroll;
+			}
+			if (num2 >= 3 && num2 <= 4)
+			{
+				MagicScroll = "Cursed Scroll, Fatal Disease (3 turns)";
+				return MagicScroll;
+			}
+			if (num2 >= 5 && num2 <= 6)
+			{
+				MagicScroll = "Cursed Scroll, Polymorph to Insect";
+				return MagicScroll;
+			}
+			if (num2 == 7)
+			{
+				MagicScroll = "Cursed Scroll, Random Teleport 1,000 miles";
+				return MagicScroll;
+			}
+			if (num2 == 8)
+			{
+				MagicScroll = "Cursed Scroll, Transported to another planet";
+				return MagicScroll;
+			}
+		}
+		else
+		{
+			if (num >= 61 && num <= 70)
+			{
+				MagicScroll = "Scroll of Prot: Lycanthropes";
+				return MagicScroll;
+			}
+			if (num >= 71 && num <= 80)
+			{
+				MagicScroll = "Scroll of Prot: Undead";
+				return MagicScroll;
+			}
+			if (num >= 81 && num <= 90)
+			{
+				MagicScroll = "Scroll of Prot: Elementals";
+				return MagicScroll;
+			}
+			if (num >= 91 && num <= 100)
+			{
+				MagicScroll = "Scroll of Prot: Magic";
+				return MagicScroll;
+			}
+		}
+		MagicScroll = "*NOTHING*" + Roll;
+	}
+	return MagicScroll;
+}
+
+function MagicWand()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicWand;
+	if (num >= 1 && num <= 10)
+	{
+		MagicWand = "Wand of Metal Detection";
+	}
+	else if (num >= 11 && num <= 15)
+	{
+		MagicWand = "Wand of Enemy Detection";
+	}
+	else if (num >= 16 && num <= 20)
+	{
+		MagicWand = "Wand of Magic Detection";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicWand = "Wand of Secret Doors & Trap Detect";
+	}
+	else if (num >= 26 && num <= 30)
+	{
+		MagicWand = "Wand of Illusion";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		MagicWand = "Wand of Fear";
+	}
+	else if (num >= 36 && num <= 39)
+	{
+		MagicWand = "Wand of Cold";
+	}
+	else if (num >= 40 && num <= 43)
+	{
+		MagicWand = "Wand of Paralyization";
+	}
+	else if (num >= 44 && num <= 47)
+	{
+		MagicWand = "Wand of Fire Balls";
+	}
+	else if (num >= 48 && num <= 51)
+	{
+		MagicWand = "Wand of Lightning Bolts";
+	}
+	else if (num >= 52 && num <= 55)
+	{
+		MagicWand = "Wand of Polymorph";
+	}
+	else if (num >= 56 && num <= 59)
+	{
+		MagicWand = "Wand of Negation";
+	}
+	else if (num >= 60 && num <= 63)
+	{
+		MagicWand = "Staff of Healing";
+	}
+	else if (num >= 64 && num <= 67)
+	{
+		MagicWand = "Staff of Commanding";
+	}
+	else if (num >= 68 && num <= 71)
+	{
+		MagicWand = "Snake Staff";
+	}
+	else if (num >= 72 && num <= 75)
+	{
+		MagicWand = "Staff of Striking";
+	}
+	else if (num >= 76 && num <= 77)
+	{
+		MagicWand = "Staff of Withering";
+	}
+	else if (num == 78)
+	{
+		MagicWand = "Staff of Power";
+	}
+	else if (num == 79)
+	{
+		MagicWand = "Staff of Wizardry";
+	}
+	else if (num >= 80 && num <= 89)
+	{
+		MagicWand = "Rod of Cancellation";
+	}
+	else if (num >= 90 && num <= 91)
+	{
+		MagicWand = "Rod of Beguiling";
+	}
+	else if (num >= 92 && num <= 93)
+	{
+		MagicWand = "Rod of Absorption";
+	}
+	else if (num >= 94 && num <= 98)
+	{
+		MagicWand = "Rod of Lordly Might";
+	}
+	else if (num == 99)
+	{
+		MagicWand = "Rod of Rulership";
+	}
+	else if (num == 100)
+	{
+		MagicWand = "Rod of Ressurrection";
+	}
+	else
+	{
+		MagicWand = "*NOTHING*" + Roll;
+	}
+	return MagicWand;
+}
+
+function MagicMisc()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc;
+	if (num >= 1 && num <= 30)
+	{
+		MagicMisc = MagicMisc1();
+	}
+	else if (num >= 31 && num <= 60)
+	{
+		MagicMisc = MagicMisc2();
+	}
+	else if (num >= 61 && num <= 75)
+	{
+		MagicMisc = MagicMisc3();
+	}
+	else if (num >= 75 && num <= 90)
+	{
+		MagicMisc = MagicMisc4();
+	}
+	else if (num >= 91 && num <= 100)
+	{
+		MagicMisc = MagicMisc5();
+	}
+	else
+	{
+		MagicMisc = "*NOTHING*" + Roll;
+	}
+	return MagicMisc;
+}
+
+function MagicMisc1()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc;
+	if (num >= 1 && num <= 5)
+	{
+		MagicMisc = "Crystal Ball";
+	}
+	else if (num >= 6 && num <= 9)
+	{
+		MagicMisc = "Crystal Ball w/Clair.";
+	}
+	else if (num >= 10 && num <= 12)
+	{
+		MagicMisc = "Crystal Ball w/ESP";
+	}
+	else if (num >= 13 && num <= 15)
+	{
+		MagicMisc = "Crystal Hypnosis Ball";
+	}
+	else if (num >= 16 && num <= 20)
+	{
+		MagicMisc = "Medallion of ESP, 3\"Range";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicMisc = "Medallion of ESP, 6\"Range";
+	}
+	else if (num >= 26 && num <= 30)
+	{
+		MagicMisc = "Medallion of Thought Projection";
+	}
+	else if (num >= 31 && num <= 33)
+	{
+		MagicMisc = "Amulet Vs Crystal Balls & ESP";
+	}
+	else if (num >= 34 && num <= 35)
+	{
+		MagicMisc = "Amulet of Inescapable Location";
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		MagicMisc = "Scarab of Prot. from EHP";
+	}
+	else if (num >= 41 && num <= 42)
+	{
+		MagicMisc = "Scarab of Enraging Enemies";
+	}
+	else if (num >= 43 && num <= 45)
+	{
+		MagicMisc = "Scarab of Insanity";
+	}
+	else if (num >= 46 && num <= 47)
+	{
+		MagicMisc = "Scarab of Death";
+	}
+	else if (num >= 48 && num <= 49)
+	{
+		MagicMisc = "Bag of Holding";
+	}
+	else if (num >= 50 && num <= 51)
+	{
+		MagicMisc = "Bag of Tricks";
+	}
+	else if (num >= 52 && num <= 55)
+	{
+		MagicMisc = "Bean Bag";
+	}
+	else if (num >= 56 && num <= 58)
+	{
+		MagicMisc = "Bag of Transmuting";
+	}
+	else if (num >= 59 && num <= 61)
+	{
+		MagicMisc = "Bag of Devuoring";
+	}
+	else if (num >= 62 && num <= 63)
+	{
+		MagicMisc = "Censor of Control Air Element.";
+	}
+	else if (num >= 64 && num <= 67)
+	{
+		MagicMisc = "Censor of Summon. Hostile Air Element.";
+	}
+	else if (num >= 68 && num <= 69)
+	{
+		MagicMisc = "Stone of Control Earth Element.";
+	}
+	else if (num >= 70 && num <= 71)
+	{
+		MagicMisc = "Luckstone";
+	}
+	else if (num >= 72 && num <= 75)
+	{
+		MagicMisc = "Loadstone";
+	}
+	else if (num >= 76 && num <= 77)
+	{
+		MagicMisc = "Brazier of Control Fire Element.";
+	}
+	else if (num >= 78 && num <= 80)
+	{
+		MagicMisc = "Brazier of Sleep Smoke";
+	}
+	else if (num >= 81 && num <= 82)
+	{
+		MagicMisc = "Bowl of Command. Water Element.";
+	}
+	else if (num >= 83 && num <= 85)
+	{
+		MagicMisc = "Bowl of Watery Death";
+	}
+	else if (num >= 86 && num <= 88)
+	{
+		MagicMisc = "Elven Boots";
+	}
+	else if (num >= 89 && num <= 92)
+	{
+		MagicMisc = "Boots of Speed";
+	}
+	else if (num >= 93 && num <= 95)
+	{
+		MagicMisc = "Boots of Levitation";
+	}
+	else if (num >= 96 && num <= 98)
+	{
+		MagicMisc = "Boots of Travel. and Leap.";
+	}
+	else if (num >= 99 && num <= 100)
+	{
+		MagicMisc = "Boots of Dancing";
+	}
+	else
+	{
+		MagicMisc = "*NOTHING*" + Roll;
+	}
+	return MagicMisc;
+}
+
+function MagicMisc2()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc2;
+	if (num >= 1 && num <= 2)
+	{
+		MagicMisc2 = "Efreet Bottle";
+	}
+	else if (num >= 3 && num <= 8)
+	{
+		MagicMisc2 = "Flask of Curses";
+	}
+	else if (num >= 9 && num <= 10)
+	{
+		MagicMisc2 = "Jug Of Alchemy";
+	}
+	else if (num >= 11 && num <= 15)
+	{
+		MagicMisc2 = "Decanter of Endless Water";
+	}
+	else if (num >= 16 && num <= 17)
+	{
+		MagicMisc2 = "Beaker of Plentiful Potions";
+	}
+	else if (num >= 18 && num <= 23)
+	{
+		MagicMisc2 = "Broom of Flying";
+	}
+	else if (num >= 24 && num <= 29)
+	{
+		MagicMisc2 = "Animated Broom";
+	}
+	else if (num >= 30 && num <= 34)
+	{
+		MagicMisc2 = "Helm of Read Magic & Lang.";
+	}
+	else if (num >= 35 && num <= 37)
+	{
+		MagicMisc2 = "Helm of Telepathy";
+	}
+	else if (num >= 38 && num <= 39)
+	{
+		MagicMisc2 = "Helm of Teleportation";
+	}
+	else if (num >= 40 && num <= 41)
+	{
+		MagicMisc2 = "Helm of Brilliance";
+	}
+	else if (num >= 42 && num <= 47)
+	{
+		if (D(6) <= 3)
+		{
+			MagicMisc2 = "Helm of Chaos";
+		}
+		else
+		{
+			MagicMisc2 = "Helm of Law";
+		}
+	}
+	else if (num >= 48 && num <= 49)
+	{
+		MagicMisc2 = "Flying Carpet";
+	}
+	else if (num >= 50 && num <= 55)
+	{
+		MagicMisc2 = "Rug of Smothering";
+	}
+	else if (num >= 56 && num <= 57)
+	{
+		MagicMisc2 = "Drums of Panic";
+	}
+	else if (num >= 58 && num <= 60)
+	{
+		MagicMisc2 = "Drums of Deafness";
+	}
+	else if (num >= 61 && num <= 62)
+	{
+		MagicMisc2 = "Horn of Blasting";
+	}
+	else if (num >= 63 && num <= 65)
+	{
+		MagicMisc2 = "Horn of Collasping";
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		MagicMisc2 = "Horn of Valhalla, Silver";
+	}
+	else if (num >= 71 && num <= 73)
+	{
+		MagicMisc2 = "Horn of Valhalla, Bronze";
+	}
+	else if (num >= 74 && num <= 75)
+	{
+		MagicMisc2 = "Horn of Valhalla, Iron";
+	}
+	else if (num >= 76 && num <= 80)
+	{
+		MagicMisc2 = "Horn of Bubbles";
+	}
+	else if (num >= 81 && num <= 84)
+	{
+		MagicMisc2 = "Gauntlets of Ogre Power";
+	}
+	else if (num >= 85 && num <= 87)
+	{
+		MagicMisc2 = "Gauntlets of Swim and Climb";
+	}
+	else if (num >= 88 && num <= 90)
+	{
+		MagicMisc2 = "Gauntlets of Dexterity";
+	}
+	else if (num >= 91 && num <= 93)
+	{
+		MagicMisc2 = "Gauntlets of Fumbling";
+	}
+	else if (num == 94)
+	{
+		MagicMisc2 = "Girdle of Giant Strength";
+	}
+	else if (num >= 95 && num <= 96)
+	{
+		MagicMisc2 = "Girdle of Female/Male";
+	}
+	else if (num >= 97 && num <= 98)
+	{
+		MagicMisc2 = "Necklace of Missiles";
+	}
+	else if (num >= 99 && num <= 100)
+	{
+		MagicMisc2 = "Necklace of Strangulation";
+	}
+	else
+	{
+		MagicMisc2 = "*NOTHING*" + Roll;
+	}
+	return MagicMisc2;
+}
+
+function MagicMisc3()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc3;
+	if (num >= 1 && num <= 5)
+	{
+		MagicMisc3 = "Cloak of Protection +1";
+	}
+	else if (num >= 6 && num <= 9)
+	{
+		MagicMisc3 = "Cloak of Protection +2";
+	}
+	else if (num >= 10 && num <= 11)
+	{
+		MagicMisc3 = "Cloak of Protection +3";
+	}
+	else if (num >= 12 && num <= 14)
+	{
+		MagicMisc3 = "Displacer Cloak";
+	}
+	else if (num >= 15 && num <= 20)
+	{
+		MagicMisc3 = "Elven Cloak";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicMisc3 = "Poisonous Cloak";
+	}
+	else if (num >= 26 && num <= 29)
+	{
+		MagicMisc3 = "Mirror of Mental Prowess";
+	}
+	else if (num == 30)
+	{
+		MagicMisc3 = "Mirror of Life Trapping";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		MagicMisc3 = "Mirror of Opposition";
+	}
+	else if (num >= 36 && num <= 37)
+	{
+		MagicMisc3 = "Trident of Warning";
+	}
+	else if (num >= 38 && num <= 39)
+	{
+		MagicMisc3 = "Trident of Command Water Creatures";
+	}
+	else if (num >= 40 && num <= 41)
+	{
+		MagicMisc3 = "Trident of Submission";
+	}
+	else if (num >= 42 && num <= 45)
+	{
+		MagicMisc3 = "Trident of Yearning";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		MagicMisc3 = "Eyes of Charming";
+	}
+	else if (num >= 51 && num <= 55)
+	{
+		MagicMisc3 = "Eyes of Petrification";
+	}
+	else if (num >= 56 && num <= 57)
+	{
+		MagicMisc3 = "Gem of Brightness";
+	}
+	else if (num >= 58 && num <= 61)
+	{
+		MagicMisc3 = "Gem of Seeing";
+	}
+	else if (num >= 62 && num <= 65)
+	{
+		MagicMisc3 = "Jewel of Atks upon Owner";
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		MagicMisc3 = "Bracers of Defense, AC 6";
+	}
+	else if (num >= 71 && num <= 75)
+	{
+		MagicMisc3 = "Bracers of Defense, AC 4";
+	}
+	else if (num >= 76 && num <= 80)
+	{
+		MagicMisc3 = "Bracers of Defense, AC 2";
+	}
+	else if (num >= 81 && num <= 85)
+	{
+		MagicMisc3 = "Bracers of Defenselessness, AC 12";
+	}
+	else if (num >= 86 && num <= 87)
+	{
+		MagicMisc3 = "Rope of Entanglement";
+	}
+	else if (num >= 88 && num <= 89)
+	{
+		MagicMisc3 = "Rope of Climbing";
+	}
+	else if (num >= 90 && num <= 91)
+	{
+		MagicMisc3 = "Rope of Constriction";
+	}
+	else if (num >= 92 && num <= 93)
+	{
+		MagicMisc3 = "Dust of Appearance";
+	}
+	else if (num >= 94 && num <= 95)
+	{
+		MagicMisc3 = "Disappearance Dust";
+	}
+	else if (num >= 96 && num <= 97)
+	{
+		MagicMisc3 = "Dust of Sneezing & Choking";
+	}
+	else if (num == 98)
+	{
+		MagicMisc3 = "Talisman of Law";
+	}
+	else if (num == 99)
+	{
+		MagicMisc3 = "Talisman of Chaos";
+	}
+	else if (num == 100)
+	{
+		MagicMisc3 = "Talisman of the Sphere";
+	}
+	else
+	{
+		MagicMisc3 = "*NOTHING*" + Roll;
+	}
+	return MagicMisc3;
+}
+
+function MagicMisc4()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc4;
+	if (num >= 1 && num <= 15)
+	{
+		MagicMisc4 = (D(4) + 1) + " Javelins of Lightning";
+	}
+	else if (num >= 16 && num <= 20)
+	{
+		MagicMisc4 = "Arrow of Direction";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicMisc4 = "Saw of Mighty Cutting";
+	}
+	else if (num >= 26 && num <= 30)
+	{
+		MagicMisc4 = "Mattock of the Titans";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		MagicMisc4 = "Spade of Colossal Excavation";
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		MagicMisc4 = "Wings of Flying";
+	}
+	else if (num >= 41 && num <= 42)
+	{
+		MagicMisc4 = "Cube of Force";
+	}
+	else if (num >= 43 && num <= 45)
+	{
+		MagicMisc4 = "Portable Hole";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		MagicMisc4 = "Horseshoes of Speed";
+	}
+	else if (num == 51)
+	{
+		MagicMisc4 = "Sphere of Annihilation";
+	}
+	else if (num >= 52 && num <= 58)
+	{
+		MagicMisc4 = "Chime of Opening";
+	}
+	else if (num >= 59 && num <= 63)
+	{
+		MagicMisc4 = "Pipe of the Sewers";
+	}
+	else if (num >= 64 && num <= 65)
+	{
+		MagicMisc4 = "Lyre of Building";
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		MagicMisc4 = "Figurine, Ebony Fly";
+	}
+	else if (num >= 71 && num <= 73)
+	{
+		MagicMisc4 = "Figurine, Onyx Dog";
+	}
+	else if (num >= 74 && num <= 75)
+	{
+		MagicMisc4 = "Figurine, Marble Elephant";
+	}
+	else if (num >= 76 && num <= 80)
+	{
+		MagicMisc4 = "Figurine, 2 Golden Lions";
+	}
+	else if (num >= 81 && num <= 84)
+	{
+		MagicMisc4 = "Figuring, 3 Ivory Goats";
+	}
+	else if (num >= 85 && num <= 88)
+	{
+		MagicMisc4 = "Wizard's Robe";
+	}
+	else if (num >= 89 && num <= 94)
+	{
+		MagicMisc4 = "Robe of Blending";
+	}
+	else if (num >= 95 && num <= 98)
+	{
+		MagicMisc4 = "Robe of Eyes";
+	}
+	else if (num >= 99 && num <= 100)
+	{
+		MagicMisc4 = "Robe of Powerlessness";
+	}
+	else
+	{
+		MagicMisc4 = "*NOTHING*" + Roll;
+	}
+	return MagicMisc4;
+}
+
+
+function MagicMisc5()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc5;
+	if (num >= 1 && num <= 5)
+	{
+		MagicMisc5 = "Manual of Skill at Arms";
+	}
+	else if (num >= 6 && num <= 10)
+	{
+		MagicMisc5 = "Manual of Exercise";
+	}
+	else if (num >= 11 && num <= 15)
+	{
+		MagicMisc5 = "Manual of Health";
+	}
+	else if (num >= 16 && num <= 20)
+	{
+		MagicMisc5 = "Manual of Pilfering";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicMisc5 = "Manual of Golems";
+	}
+	else if (num >= 26 && num <= 30)
+	{
+		MagicMisc5 = "Manual of Quickness";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		MagicMisc5 = "Book of Deeds";
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		MagicMisc5 = "Book of Darkness";
+	}
+	else if (num >= 41 && num <= 45)
+	{
+		MagicMisc5 = "Book of Infinite Spells";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		MagicMisc5 = "Libram of Magic";
+	}
+	else if (num >= 51 && num <= 55)
+	{
+		MagicMisc5 = "Libram of Conjurations";
+	}
+	else if (num >= 56 && num <= 60)
+	{
+		MagicMisc5 = "Libram of Damnation";
+	}
+	else if (num >= 61 && num <= 65)
+	{
+		MagicMisc5 = "Tome of Understanding";
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		MagicMisc5 = "Tome of Thought";
+	}
+	else if (num >= 71 && num <= 75)
+	{
+		MagicMisc5 = "Tome of Leadership";
+	}
+	else if (num >= 76 && num <= 100)
+	{
+		MagicMisc5 = "Deck of Many Things";
+	}
+	else
+	{
+		MagicMisc5 = "*NOTHING*" + Roll;
+	}
+	return MagicMisc5;
+}
+
+function MagicMisc5()
+{
+	var Roll = D(100);
+	var num = Roll;
+	var MagicMisc5;
+	if (num >= 1 && num <= 5)
+	{
+		MagicMisc5 = "Manual of Skill at Arms";
+	}
+	else if (num >= 6 && num <= 10)
+	{
+		MagicMisc5 = "Manual of Exercise";
+	}
+	else if (num >= 11 && num <= 15)
+	{
+		MagicMisc5 = "Manual of Health";
+	}
+	else if (num >= 16 && num <= 20)
+	{
+		MagicMisc5 = "Manual of Pilfering";
+	}
+	else if (num >= 21 && num <= 25)
+	{
+		MagicMisc5 = "Manual of Golems";
+	}
+	else if (num >= 26 && num <= 30)
+	{
+		MagicMisc5 = "Manual of Quickness";
+	}
+	else if (num >= 31 && num <= 35)
+	{
+		MagicMisc5 = "Book of Deeds";
+	}
+	else if (num >= 36 && num <= 40)
+	{
+		MagicMisc5 = "Book of Darkness";
+	}
+	else if (num >= 41 && num <= 45)
+	{
+		MagicMisc5 = "Book of Infinite Spells";
+	}
+	else if (num >= 46 && num <= 50)
+	{
+		MagicMisc5 = "Libram of Magic";
+	}
+	else if (num >= 51 && num <= 55)
+	{
+		MagicMisc5 = "Libram of Conjurations";
+	}
+	else if (num >= 56 && num <= 60)
+	{
+		MagicMisc5 = "Libram of Damnation";
+	}
+	else if (num >= 61 && num <= 65)
+	{
+		MagicMisc5 = "Tome of Understanding";
+	}
+	else if (num >= 66 && num <= 70)
+	{
+		MagicMisc5 = "Tome of Thought";
+	}
+	else if (num >= 71 && num <= 75)
+	{
+		MagicMisc5 = "Tome of Leadership";
+	}
+	else if (num >= 76 && num <= 100)
+	{
+		MagicMisc5 = "Deck of Many Things";
+	}
+	else
+	{
+		MagicMisc5 = "*NOTHING*" + Roll;
+	}
+	return MagicMisc5;
+}
+
+function Generate_Dungeon() {
+	var SB = new StringBuilder();
+	var result = "";
+	var nRooms = "";
+	nRooms = document.forms["myDungeonForm"]["nDungeonRooms"].value
+	result =  Generate_Rooms(nRooms);
+	document.getElementById("contentDungeon").innerHTML = result;
+	document.getElementById("contentcopyTreasure").value = result;
+	document.getElementById("contentcopyarea").value = result;
+	return;
+}
+function Generate_Rooms(NumberOfRooms) {
+	var SB = new StringBuilder();
+	if (NumberOfRooms === undefined) {
+		NumberOfRooms = 1;
+	}
+	for (i = 0; i < NumberOfRooms; i++) {
+		if (i > 0) {
+			SB.Append("<br>");
+		}
+		var index = i + 1;
+		SB.Append(index);
+		SB.Append("-");
+		SB.Append(RoomContent());
+	}
+	SB.Append("<br>");
+	return SB.ToString();
+}
+
+
+function RoomContent()
+{
+	var result = new RandomTable();
+	result.Add("Monster" + GenMonsterTreasure(), 1, 2);
+	result.Add("Trap" + GenTrapTreasure(), 3, 3);
+	result.Add("Special", 4, 4);
+	result.Add("Empty" + GenEmptyTreasure(), 5, 6);
+	return result.Generate(D(6));
+}
+
+function GenMonsterTreasure() {
+	var result = ", Treasure, No";
+	var roll = D(6);
+	if (roll < 4) {
+		result = ", Treasure, Yes";
+	}
+	return result;
+}
+
+function GenTrapTreasure() {
+	var result = ", Treasure, No";
+	var roll = D(6);
+	if (roll < 3) {
+		result = ", Treasure, Yes";
+	}
+	return result;
+}
+
+function GenEmptyTreasure() {
+	var result = ", Treasure, No";
+	var roll = D(6);
+	if (roll == 1) {
+		result = ", Treasure, Yes";
+	}
+	return result;
+}

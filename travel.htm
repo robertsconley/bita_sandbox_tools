@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Bat in the Attic, Travel Encounters</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />	
+</head>
+<body>
+	<h1>Travel Encounters for the Majestic Fantasy RPG</h1>
+	<i>By Robert S. Conley, Bat in the Attic Games, Copyright 2024</i>
+    <form name="TravelForm">
+		<table id="travel_setup">
+			<tr id="travel_tr">
+				<td>
+					<label for="TravelTypeLabel"><b>Choose Type:</b></label>
+				</td>
+				<td>
+					<select name="TravelType" id="TravelType">
+						<option value="Journey">Journey</option>
+						<option value="Voyage">Voyage</option>
+						<option value="Trip">Trip</option>
+					</select>
+				</td>
+			</tr>
+			<tr id="travel_tr">
+				<td>
+					<label for="TravelLengthLabel"><b>Choose Travel Time:</b></label>
+				</td>
+				<td>
+					<select name="TravelLength" id="TravelLength">
+						<option value="Short">One Day / Within a Block(minutes)</option>
+						<option value="Medium">One Week / To Another Block (1/2 hour)</option>
+						<option value="Long">One Month / To Another Quarter(1 hour)</option>
+					</select>
+				</td>			
+			</tr>
+		</table>
+		<br/>
+		<button type="button" onclick="Generate_Travel()">Generate Travel Events</button><br/>
+    </form>
+	<br/>
+    <p id="contentTravel"></p>
+	
+	<p id = "contentcopybody"> <input type="text" value="" id="contentcopyResult"></p>
+	<script src="bita_utilities.js"></script>
+    <script src="mf_travel.js"></script>
+</body>
+</html>

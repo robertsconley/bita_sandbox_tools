@@ -1,0 +1,55 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+#contentcopyTreasure {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}
+#contentcopyarea {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}
+
+#contentcopyResult {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}
+
+#numcol {
+  text-align: right;
+}
+
+#travel_setup {
+  border: 0px solid black;
+}
+
+#travel_tr{
+  background-color: #ffffff;
+}
+
+.event_title {
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+
+.event_desc {
+  text-align: left;
+  background-color: white;
+  color: black;
+}
+
+.encounter_block {
+  border: 2px solid black;
+  border-radius: 0px;
+  width: 50%
+}
