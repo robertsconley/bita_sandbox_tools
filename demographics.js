@@ -1,721 +1,1435 @@
-var TValue = 0;
-var CoinValue = 0;
-var JewelValue = "";
-var GemValue = "";
+var d_value;
+var d_prof;
 
-function SB_Test(){
-	var SB = new StringBuilder();
-	var result = "";
-	/*SB.Append(_3D6());
-	SB.Append("<br/>");
-	SB.Append(numberWithCommas(10000));
-	SB.Append("<br/>");
-	var tTable = new RandomTable();
-	tTable.Add("One",1,2);
-	tTable.Add("Two",3,4);
-	tTable.Add("Three",5,6);
-	tTable.Add("Four",7,8);
-	SB.Append(tTable.Generate(D(8)));
-	SB.Append("<br/>");
-	TempD = 5 / 2;
-	SB.Append(TempD);
-	SB.Append("<br/>");
-	TempD = Math.floor(5 /2);
-	SB.Append(TempD);
-	SB.Append("<br/>");
-	var pushTable = table_common_jewelry();
-	SB.Append(pushTable.Generate(_1D10()));
-	result = SB.ToString();*/
-	//TValue = 0;
-	//TValue = document.forms["myForm"]["TValue"].value;
-	//result = coin_treasure(TValue);
-	//SB.Append(common_jewels_gems());
-	//SB.Append("<br/>");
-	//SB.Append(uncommon_jewels_gems());
-	//SB.Append("<br/>");
-/*	SB.Append(gen_arcane_spells(D(6)));
-	SB.Append("<br/>");
-	SB.Append(gen_divine_spells(D(6)));
-	SB.Append("<br/>");
-	SB.Append("D1<br/>");
-	SB.Append(spells_divine_1());
-	SB.Append("<br/>");
-	SB.Append("D2<br/>");
-	SB.Append(spells_divine_2());
-	SB.Append("<br/>");
-	SB.Append("D3<br/>");
-	SB.Append(spells_divine_3());
-	SB.Append("<br/>");
-	SB.Append("D4<br/>");
-	SB.Append(spells_divine_4());
-	SB.Append("<br/>");
-	SB.Append("D5<br/>");
-	SB.Append(spells_divine_5());
-	SB.Append("<br/>");
-	SB.Append("D6<br/>");
-	SB.Append(spells_divine_6());
-	SB.Append("<br/>");
-	SB.Append("D7<br/>");
-	SB.Append(spells_divine_7());
-	SB.Append("<br/>");
-	SB.Append("A1<br/>");
-	SB.Append(spells_arcane_1());
-	SB.Append("<br/>");
-	SB.Append("A2<br/>");
-	SB.Append(spells_arcane_2());
-	SB.Append("<br/>");
-	SB.Append("A3<br/>");
-	SB.Append(spells_arcane_3());
-	SB.Append("<br/>");
-	SB.Append("A4<br/>");
-	SB.Append(spells_arcane_4());
-	SB.Append("<br/>");
-	SB.Append("A5<br/>");
-	SB.Append(spells_arcane_5());
-	SB.Append("<br/>");
-	SB.Append("A6<br/>");
-	SB.Append(spells_arcane_6());
-	SB.Append("<br/>");
-	SB.Append("A7<br/>");
-	SB.Append(spells_arcane_7());
-	SB.Append("<br/>");
-	SB.Append("A8<br/>");
-	SB.Append(spells_arcane_8());
-	SB.Append("<br/>");
-	SB.Append("A9<br/>");
-	SB.Append(spells_arcane_9());
-	SB.Append("<br/>");*/
-	SB.Append(common_weapons_armor());
-	SB.Append("<br/>");
-	SB.Append(uncommon_weapons_armor());
-	SB.Append("<br/>");
-	SB.Append(common_wands());
-	SB.Append("<br/>");
-	SB.Append(uncommon_wands());
-	SB.Append("<br/>");
-	SB.Append(common_rings());
-	SB.Append("<br/>");
-	SB.Append(common_other_magic_items());
-	SB.Append("<br/>");
-	SB.Append(uncommon_other_magic_items());
-	SB.Append("<br/>");
-	SB.Append(rare_other_magic_items());
-	SB.Append("<br/>");
-	result = SB.ToString();
-	document.getElementById("contentTreasure").innerHTML = result;
-	document.getElementById("contentcopyTreasure").value = result;
-	return;
-	
+function D(dice) {
+    return Math.ceil(dice * Math.random());
 }
 
-function Generate_Treasure(){
-	var SB = new StringBuilder();
-	var result = "";
-	var TempS = "";
-	TValue = 0;
-	CoinValue = 0;
-	JewelValue = "";
-	GemValue = "";
-//	SB_Test();
-//	return;
-	TValue = document.forms["myForm"]["TValue"].value;
-	TValue = random_treasurevalue(TValue);
-	TempS = uncommon_treasure();
-	if (TempS != "") {
-		SB.Append(TempS);
-	}
-	TempS = common_treasure();
-	SB.AppendWithDelimiter(TempS, ", ");
-	
-	SB.AppendWithDelimiter(JewelValue, ", ");
-	SB.AppendWithDelimiter(GemValue, ", ");
+function _1D6() {
+	return D(6);
+}
 
-	CoinValue = parseFloat(CoinValue) + parseFloat(TValue);
-	if (CoinValue > 0) {
-		SB.AppendWithDelimiter(coin_treasure(CoinValue),", ");
+function _2D6() {
+	return D(6) + D(6);
+}
+
+function _3D6() {
+	return D(6) + D(6) + D(6);
+}
+
+function _4D6() {
+	return D(6) + D(6) + D(6) + D(6);
+}
+
+function _5D6() {
+	return D(6) + D(6) + D(6) + D(6) + D(6);
+}
+
+function _6D6() {
+	return D(6) + D(6) + D(6) + D(6) + D(6) + D(6);
+}
+
+function _2D8() {
+	return D(8) + D(8);
+}
+
+function _3D8() {
+	return D(8) + D(8) + D(8);
+}
+
+function _2D12() {
+	return D(12) + D(12);
+}
+
+function _1D10() {
+	return D(10);
+}
+
+function _2D10() {
+	return D(10) + D(10);
+}
+
+function _3D10() {
+	return D(10) + D(10) + D(10);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function _1DF() {
+    var roll = D(6);
+    var result = 0;
+    switch (roll) {
+        case 1:
+            return -1;
+        case 2:
+            return -1;
+        case 3:
+            return 0;
+        case 4:
+            return 0;
+        case 5:
+            return 1;
+        case 6:
+            return 1;
+    }
+}
+
+class StringBuilder {
+	constructor(){
+		this.stringresult = "";
 	}
 	
-	result = SB.ToString();
-	document.getElementById("contentTreasure").innerHTML = result;
-	document.getElementById("contentcopyTreasure").value = result;
-	return;
-}
-
-function uncommon_treasure(){
-	var result = "";
-	var SB = new StringBuilder();
-	var tradeout = Math.floor(TValue / 1000);
-	var i = 0;
-	var divider = "";
-	for (i = 0; i < tradeout; i++)
-	{
-		var Roll = _1D20();
-		if (Roll > 10) {
-			TValue = TValue - 1000;
-			SB.AppendWithDelimiter(uncommon_tradeout(), divider);
-			divider = ", ";
-		}
-	}			
-	result = SB.ToString();
-	return result;
-}
-
-function common_treasure(){
-	var result = "";
-	var SB = new StringBuilder();
-	var tradeout = Math.floor(TValue / 100);
-	var i = 0;
-	var divider = "";
-	for (I = 0; I < tradeout; I++)
-	{
-		var Roll = _1D20();
-		if (Roll > 10) {
-			TValue = TValue - 100;
-			SB.AppendWithDelimiter(common_tradeout(), divider);
-			divider = ", ";
-		}
-	}			
-	result = SB.ToString();
-	return result;
-}
-
-function uncommon_tradeout(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();
-	var i = 0;
-	if (Roll <= 2) {
-		return uncommon_jewels_gems();
+	Test() {
+		this.stringresult = "Test Done";
+		return;
 	}
-	if (Roll <= 5) {
-		for (i = 0; i < 10; i++)
+	
+	Append(stringtext){
+		this.stringresult = this.stringresult + stringtext;
+	}
+	
+	ToString(){
+		return this.stringresult;
+	}
+}
+
+class RandomTable {
+	constructor() {
+		this.rEntries = [];
+		this.nEntries = 0;
+	}
+	Add(value, loVal, hiVal){
+		var tEntry = new RandomEntry(value, loVal, hiVal);
+		this.rEntries.push(tEntry);
+		this.nEntries++;
+	}
+	
+	Generate(Roll){
+		var I = 0;
+		var result = "";
+		for (I = 0; I < this.nEntries; I++)
 		{
-			SB.AppendWithDelimiter(common_magic_items(), ", ");
-		}
-		result = SB.ToString();
-		return result;		
-	}
-
-	SB.Append(uncommon_magic_items());
-	result = SB.ToString();
-	return result;
-}
-
-function common_tradeout(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();
-	if (Roll <= 2) {
-		SB.Append(common_jewels_gems());
-	} else {
-		SB.Append(common_magic_items());
-	}
-	result = SB.ToString();
-	return result;
-}
-
-function common_magic_items(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();
-	if (Roll <= 8) {
-		return common_potions();
-	} 
-	
-	if (Roll <= 14) {
-		return common_charm_scroll();
-	} else {
-		return common_weapons_armor();
-	}
-	return "";
-}
-
-function uncommon_magic_items(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();
-	if (Roll <= 5) {
-		return uncommon_potions();
-	} 
-
-	if (Roll <= 10) {
-		return uncommon_charm_scroll();
-	} 
-	
-	if (Roll <= 15) {
-		return uncommon_weapons_armor();
-	} else {
-		return uncommon_misc_magic_items();
-	}
-	return "";
-}
-
-function common_potions() {
-	var result = "";
-	var rt = table_common_potions();
-	result = rt.Pick();
-	return result;
-}
-
-function uncommon_potions() {
-	var result = "";
-	var rt = table_common_potions();
-	result = rt.Pick();
-	result = result + ", ";
-	result = result + rt.Pick();
-	return result;
-}
-
-function common_charm_scroll(){
-	var result = "";
-	var Roll = _1D20();
-	if (Roll <= 5) {
-		return common_charms();
-	} 
-	return common_scolls();
-
-}
-
-function uncommon_charm_scroll(){
-	var result = "";
-	var Roll = _1D20();
-	if (Roll <= 5) {
-		return uncommon_charms();
-	} 
-	return uncommon_scolls();
-}
-
-function common_scolls() {
-	var Roll = _1D20();
-	if (Roll <= 10) {
-		return common_arcane_scroll();
-	} else {
-		return common_divine_scroll();
-	}
-}
-
-function uncommon_scolls() {
-	var Roll = _1D20();
-	if (Roll <= 10) {
-		return uncommon_arcane_scroll();
-	} else {
-		return uncommon_divine_scroll();
-	}
-}
-
-function common_charms() {
-	var Roll = _1D20();
-	if (Roll <= 10) {
-		return common_arcane_charm();
-	} else {
-		return common_divine_charm();
-	}
-}
-
-function uncommon_charms() {
-	var Roll = _1D20();
-	if (Roll <= 10) {
-		return uncommon_arcane_charm();
-	} else {
-		return uncommon_divine_charm();
-	}
-}
-
-function common_arcane_scroll() {
-	return "Scroll of " + pick_arcane_spell(1);
-}
-
-function common_arcane_charm() {
-	return "Charm of " + pick_arcane_spell(1);
-}
-
-function common_divine_scroll() {
-	return "Scroll of " + pick_divine_spell(1);
-}
-
-function common_divine_charm() {
-	return "Charm of " + pick_divine_spell(1);
-}
-
-function uncommon_arcane_scroll() {
-	var Roll = _1D20();
-	if (Roll <=4) {
-		return "Scroll of " + pick_arcane_spell(D(2));
-	}
-	return "Scroll of " + pick_arcane_spell(D(3));
-}
-
-function uncommon_arcane_charm() {
-	var Roll = _1D20();
-	if (Roll <=4) {
-		return "Charm of " + pick_arcane_spell(D(2));
-	}
-	return "Charm of " + pick_arcane_spell(D(3));
-}
-
-function uncommon_divine_scroll() {
-	var Roll = _1D20();
-	if (Roll <=4) {
-		return "Scroll of " + pick_divine_spell(D(2));
-	}
-	return "Scroll of " + pick_divine_spell(D(3));
-}
-
-function uncommon_divine_charm() {
-	var Roll = _1D20();
-	if (Roll <=4) {
-		return "Charm of " + pick_divine_spell(D(2));
-	}
-	return "Charm of " + pick_divine_spell(D(3));
-}
-
-function common_weapons_armor() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add(D(6) + " " + common_missiles() + " with +1 damage only",1,5);
-	rt.Add("+1 " + common_shields(),6,11);
-	rt.Add("+1 " + common_melee_weapons(),12,20);
-	return rt.Generate(Roll);
-}
-
-function uncommon_weapons_armor() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add(cursed_armor(),1,1);
-	rt.Add("+1 " + melee_swords() + " +2 vs Lycanthropes",2,3);
-	rt.Add("+1 " + melee_swords() + " +2 vs Magic Users",5,7);
-	rt.Add("+1 " + melee_swords() + " +3 vs Undead",8,9);
-	rt.Add("+1 " + melee_swords() + " +3 vs Dragons",10,10);
-	rt.Add("+1 " + melee_swords() + " w/ Light 15' radius",11,13);
-	rt.Add("+2 " + melee_swords(),14,14);
-	rt.Add("+1 " + common_armor(),15,19);
-	rt.Add("-1 Cursed " + melee_swords(),20,20);
-	return rt.Generate(Roll);
-}
-
-function cursed_armor() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Cursed -1 " + common_armor(),1,8);
-	rt.Add("Cursed -2 " + common_armor(),9,10);
-	rt.Add("Cursed -3 " + common_armor(),11,11);
-	rt.Add("Cursed " + common_armor() + " that Attracts Missiles",12,14);
-	rt.Add("Cursed " + common_armor() + " causes wearer to run away from combat.",15,17);
-	rt.Add("Cursed " + common_armor() + " cause wearer to charge into combat.",18,20);
-	return rt.Generate(Roll);
-}
-
-function uncommon_misc_magic_items() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add(common_wands(),1,2);
-	rt.Add(uncommon_wands(),3,3);
-	rt.Add(common_rings(),4,6);
-	rt.Add(common_other_magic_items(),7,15);
-	rt.Add(uncommon_other_magic_items(),16,20);
-	return rt.Generate(Roll);
-}
-function common_wands() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Wand of <i>" + spells_arcane_1() + "</i> (2 charges)",1,10);
-	rt.Add("Wand of <i>" + spells_arcane_1() + "</i> (5 charges)",11,16);
-	rt.Add("Wand of <i>" + spells_arcane_3() + "</i> (2 charges)",17,20);
-
-	return rt.Generate(Roll);
-}
-
-function uncommon_wands() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Wand of <i>" + spells_arcane_3() + "</i> (2 charges)",1,6);
-	rt.Add("Wand of <i>" + spells_arcane_1() + "</i> (10 charges)",7,15);
-	rt.Add("Wand of <i>" + spells_arcane_2() + "</i> (5 charges)",16,20);
-	return rt.Generate(Roll);
-}
-
-function common_rings() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Ring of Fire Resistance",1,4);
-	rt.Add("Ring of Mammal Control",5,5);
-	rt.Add("Ring of Poison Resistance",6,8);
-	rt.Add("Ring of Protection +1",9,14);
-	rt.Add("Ring of Invisibility",15,20);
-	return rt.Generate(Roll);
-}
-
-function common_other_magic_items() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Arrow of Direction",1,1);
-	rt.Add("Boots of Elvenkind",2,3);
-	rt.Add("Bracers of Defense AC 6[13]",4,4);
-	rt.Add("Cloak of Elvenkind",5,6);
-	rt.Add("Cloak of Protection +1",7,8);
-	rt.Add("Dust of Appearance",9,9);
-	rt.Add("Figurine of the Onyx Dog",10,10);
-	rt.Add("Gauntlets of Dexterity",11,11);
-	rt.Add("Gauntlets of Ogre Power",12,13);
-	rt.Add("Gauntlets of Swimming and Climbing",14,14);
-	rt.Add("Helm of Reading Magic and Languages",15,15);
-	rt.Add("Necklace of Fire with 3 baubles",16,16);
-	rt.Add("Rope of Climbing",17,18);
-	rt.Add("Rope of Entanglement",19,19);
-	rt.Add("Spade of Excavation",20,20);
-	return rt.Generate(Roll);
-}
-
-function uncommon_other_magic_items() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Crystal Ball",1,4);
-	rt.Add("Dust of Disappearance",5,12);
-	rt.Add("Medallion of Detect Thoughts, 30 ft",13,18);
-	rt.Add(rare_other_magic_items(),19,20);
-	return rt.Generate(Roll);
-}
-
-function rare_other_magic_items() {
-	var Roll = _1D20();
-	var rt = new RandomTable();
-	rt.Add("Bag of Holding",1,15);
-	rt.Add("Bag of Devouring",16,20);
-	return rt.Generate(Roll);
-}
-
-
-
-function gen_arcane_spells(quantity) {
-	var rt = new RandomTable();
-	var SB = new StringBuilder();
-	rt.Push(spells_arcane_1());
-	rt.Push(spells_arcane_2());
-	rt.Push(spells_arcane_3());
-	
-	for (i = 0; i < quantity; i++) {
-		SB.AppendWithDelimiter(rt.Pick(),", ");
-	}	
-	return SB.ToString();
-}
-
-function gen_divine_spells(quantity) {
-	var rt = new RandomTable();
-	var SB = new StringBuilder();
-	rt.Push(spells_divine_1());
-	rt.Push(spells_divine_2());
-
-	for (i = 0; i < quantity; i++) {
-		SB.AppendWithDelimiter(rt.Pick(),", ");
-	}	
-	return SB.ToString();
-}
-
-
-function coin_treasure(coin_value) {
-	var SB = new StringBuilder();
-	var maxcrowns = (Math.floor(coin_value / 640));
-	var maxmarks = (Math.floor(coin_value / 480));
-	var maxgp = (Math.floor(coin_value / 40));
-	var ncrowns = 0;
-	var nmarks = 0;
-	var ngp = 0;
-	var Roll = _1D20();
-	
-	if(maxcrowns > 0) ncrowns = D(maxcrowns) - 1;
-	if(maxmarks > 0) nmarks = D(maxcrowns) - 1;
-	if(maxgp > 0) ngp = D(maxcrowns) - 1;
-	
-	var ncrown_d = (parseFloat(coin_value) - (parseFloat(ncrowns) * 320))
-	var nmark_d = (parseFloat(coin_value) - (parseFloat(nmarks) * 240))
-	var ngp_d = (parseFloat(coin_value) - (parseFloat(ngp) * 20))
-
-	if (Roll <= 14) {
-		if (ncrowns > 0) {
-			SB.Append(numberWithCommas(ncrowns));
-			if (ncrowns == 1) {
-				SB.Append(" crown");			
-			} else {
-				SB.Append(" crowns");
+			if (this.rEntries[I].IsBetween(Roll)) {
+				result = this.rEntries[I].value;
 			}
 		}
-		if (ncrown_d > 0) {
-			SB.AppendWithDelimiter(random_coinvaluetext(ncrown_d), ", ");
-			SB.Append("d");
-		}
-		result = SB.ToString();
 		return result;
 	}
 	
-	if (Roll <= 18) {
-		if (nmarks > 0) {
-			SB.Append(numberWithCommas(nmarks));
-			if (nmarks == 1) {
-				SB.Append(" mark");			
-			} else {
-				SB.Append(" marks");			
+}
+
+class RandomEntry {
+	constructor(value, loVal, hiVal) {
+		this.value = value;
+		this.loVal = loVal;
+		this.hiVal = hiVal;
+	}
+
+	
+	IsBetween(aValue){
+		var result = false;
+		if (aValue >= this.loVal) {
+			if (aValue <= this.hiVal) {
+				result = true;
 			}
 		}
-		if (nmark_d > 0) {
-			SB.AppendWithDelimiter(random_coinvaluetext(nmark_d), ", ");
-			SB.Append("d");
-		}
-		result = SB.ToString();
 		return result;
 	}
+}
 
-	if (ngp > 0) {
-		SB.Append(numberWithCommas(ngp));
-		SB.Append(" gp");			
+
+
+function _4DF() {
+    //return _1DF() + _1DF() + _1DF() + _1DF();
+	//return D(6)-D(6);
+	return D(6)+D(6);
+	//return D(5)+D(5);
+	//return D(3)+D(3)+D(3)+D(3);
+}
+
+function InitDemoValues(){
+	d_prof = [
+				 "Artist"         // 0
+				,"Baker"          // 1
+				,"Carpenter"      // 2
+				,"Chandler"       // 3
+				,"Clerk"          // 4
+				,"Engineer"       // 5
+				,"Finesmith"      // 6
+				,"Fisherman"      // 7
+				,"Games"          // 8
+				,"Glassmaker"     // 9
+				,"Harper"         //10
+				,"Herbalist"      //11
+				,"Jeweler"        //12
+				,"Laborer"        //13
+				,"Leathercrafter" //14
+				,"Legal" 		  //15
+				,"Luxury" 		  //16
+				,"Mason"          //17
+				,"Mercernary"     //18
+				,"Merchant"       //19
+				,"Metalsmith"     //20
+				,"Miller"         //21
+				,"Miner"          //22
+				,"Ostler"         //23
+				,"Physician"      //24
+				,"Pilot"          //25
+				,"Potter"         //26
+				,"Religious"      //27
+				,"Sailor"         //28
+				,"Scholar"        //29
+				,"Servant"        //30
+				,"Shipwright"     //31
+				,"Tailor"         //32
+				,"Tanner"         //33
+				,"Tavern"         //34
+				,"Teamster"       //35
+				,"Timber"         //36
+				,"Weaponsmith"    //37
+				,"Weaver"    //38
+	
+	];
+	d_value = [	 965   // 0
+				,202   // 1
+				,196   // 2
+				,509   // 3
+				,3929  // 4
+				,13750 // 5
+				,238   // 6
+				,1078  // 7
+				,3667  // 8
+				,1375  // 9
+				,6875  //10
+				,573   //11
+				,276   //12
+				,149   //13
+				,80    //14
+				,1222  //15
+				,18333 //16
+				,259   //17
+				,3929  //18
+				,243   //19
+				,529   //20
+				,275   //21
+				,1618  //22
+				,322   //23
+				,289   //24
+				,1774  //25
+				,2619  //26
+				,786   //27
+				,4583  //28
+				,353   //29
+				,154   //30
+				,3929  //31
+				,94    //32
+				,1058  //33
+				,130   //34
+				,1122  //35
+				,833   //36
+				,462   //37
+				,119   //38
+]
+	
+	return;
+}
+
+function CopySettlement() {
+  var copyText = document.getElementById("contentcopySettlement");
+  copyText.value = document.getElementById("contentSettlement").innerHTML
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Settlement: " + copyText.value);
+}
+
+function CopyGarrison() {
+  var copyText = document.getElementById("contentcopyGarrison");
+  copyText.value = document.getElementById("contentGarrison").innerHTML
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  alert("Garrison: " + copyText.value);
+}
+
+function Generate_Shops(){
+	var SB = new StringBuilder();
+	var result = "";
+	var TType = "";
+	TType = document.forms["myForm"]["Settlement_CultureTypes"].value
+	
+	var TempD = 0.0;
+	var nPopulation = parseInt(document.forms["myForm"]["nPopulation"].value);
+	var Tally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var FinalTally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	InitDemoValues();
+	
+	
+	for (i = 0; i < 39; i++) {
+		TempD = d_value[i]/ nPopulation;
+	    TempD =  nPopulation / d_value[i];
+		Tally[i] = Math.floor(TempD);
+		OneMore = TempD - Tally[i];
+		OneMoreRoll = D(100)/100;
+		if (OneMoreRoll <= OneMore) {
+			Tally[i] += 1;
+		}
+		
 	}
-	if (ngp_d > 0) {
-		SB.AppendWithDelimiter(random_coinvaluetext(ngp_d), ", ");
-		SB.Append("d");
+	for (i = 0; i < 39; i++) {
+		if (Tally[i] > 0) {
+			if (i > 0) SB.Append(" ");
+			SB.Append(d_prof[i]);
+			SB.Append(" ");
+			SB.Append(Tally[i]);
+			SB.Append(";");
+		}
 	}
+	
 	result = SB.ToString();
-	return result;
+	document.getElementById("contentSettlement").innerHTML = result;
+	document.getElementById("contentcopySettlement").value = result;
+	return;
 }
 
-function random_coinvaluetext(coin_value){
-	var result = "";
-	var base_money_value = Math.floor(coin_value / 2);
-	return numberWithCommas(parseFloat(base_money_value) + parseFloat(D(base_money_value) * 2));
+
+function Troop_Types()
+{
+	var TroopTypes = [
+		"Light Foot",           // 0
+		"Med. Foot",            // 1
+		"Hvy. Foot",            // 2
+		"Slingers",             // 3
+		"Shortbow",             // 4
+		"Crossbow",             // 5
+		"Longbow",              // 6
+		"Lgt. Cavalry",         // 7
+		"Horse Archers",        // 8
+		"Med. Cavalry",         // 9
+		"Hvy. Cavalry",         // 10
+		"Hvy. Cavalry w/Bows",  // 11
+		"Camel Archers",        // 12
+		"Camel Lancers",        // 13
+		"War Elephants",        // 14
+		"Mounted Crossbowmen",  // 15
+		"Beast Riders"          // 16
+	];	
+	return TroopTypes;
 }
 
-function random_coinvalue(coin_value){
-	var result = "";
-	var base_money_value = Math.floor(coin_value / 2);
-	return parseFloat(base_money_value) + parseFloat(D(base_money_value) * 2);
-}
-
-function random_treasurevalue(coin_value){
-	var result = "";
-	var base_money_value = Math.floor(coin_value / 4);
-	return parseFloat(coin_value) + parseFloat(D(base_money_value));
-}
-
-function uncommon_jewelry(){
-	var result = "";
-	var rt = table_uncommon_jewelry();
-	result = rt.Pick();
-	return result;
-}
-
-function uncommon_gems(){
-	var result = "";
-	var rt = table_uncommon_gems();
-	result = rt.Pick();
-	return result;
-}
-
-function common_jewelry(){
-	var result = "";
-	var rt = table_common_jewelry();
-	result = rt.Pick();
-	return result;
-}
-
-function common_gems(){
-	var result = "";
-	var rt = table_common_gems();
-	result = rt.Pick();
-	return result;
-}
-
-function uncommon_jewels_gems(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();	
-	if (Roll <= 10) {		
-		SB.Append(JewelValue);
-		SB.AppendWithDelimiter(uncommon_jewelry(),", ");
-		JewelValue = SB.ToString();
-	} else {
-		SB.Append(GemValue);
-		SB.AppendWithDelimiter(uncommon_gems(), ", ");
-		GemValue = SB.ToString();
+function GetDemoInfo(race_culture)
+{
+	var result;
+	switch (race_culture)
+	{
+		case "Bugbear":
+			result = DemoInfo_Bugbear();
+			break;
+		case "Dwarf":
+			result = DemoInfo_Dwarf();
+			break;
+		case "Gnome":
+			result = DemoInfo_Gnome();
+			break;
+		case "Elf":
+			result = DemoInfo_Elf();
+			break;
+		case "Halfling":
+			result = DemoInfo_Halfling();
+			break;
+		case "Sorobe":
+			result = DemoInfo_Sorobe();
+			break;
+		case "Sylvan":
+			result = DemoInfo_Sylvan();
+			break;
+		case "Grand_Kingdom":
+			result = DemoInfo_Grand_Kingdom();
+			break;
+		case "Rurasin":
+			result = DemoInfo_Rurasin();
+			break;
+		case "Ostrobard":
+			result = DemoInfo_Ostrobard();
+			break;
+		case "Gnoll":
+			result = DemoInfo_Gnoll();
+			break;
+		case "Goblin_Civilized":
+			result = DemoInfo_Goblin_Civilized();
+			break;
+		case "Goblin_Tribal":
+			result = DemoInfo_Goblin_Tribal();
+			break;
+		case "Hobgoblin_Civilized":
+			result = DemoInfo_Hobgoblin_Civilized();
+			break;
+		case "Hobgoblin_Tribal":
+			result = DemoInfo_Hobgoblin_Tribal();
+			break;
+		case "Ochre Empire":
+			result = DemoInfo_Ochre_Empire();
+			break;
+		case "Viridian":
+			result = DemoInfo_Viridian();
+			break;
+		case "Kobold":
+			result = DemoInfo_Kobold();
+			break;
+		case "Lizardmen":
+			result = DemoInfo_Lizardmen();
+			break;
+		case "Desert_Nomads":
+			result = DemoInfo_Desert_Nomads();
+			break;
+		case "Sons_Vadim":
+			result = DemoInfo_Sons_Vadim();
+			break;
+		case "Ogre":
+			result = DemoInfo_Ogre();
+			break;
+		case "Orc":
+			result = DemoInfo_Orc();
+			break;
+		case "Reptilemen":
+			result = DemoInfo_Reptilemen();
+			break;
+		case "Serpentmen":
+			result = DemoInfo_Serpentmen();
+			break;
+		case "Vasan":
+			result = DemoInfo_Vasan();
+			break;
 	}
-	return "";
+	return result;
+}
+
+function Demographic_Template()
+{
+	var Demographics = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+
+	];	
+	return Demographics;
+}
+
+function DemoInfo_Bugbear()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Dwarf()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Gnome()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Elf()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Sylvan()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Halfling()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+
+function DemoInfo_Sorobe()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+
+function DemoInfo_Ostrobard()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+
+function DemoInfo_Grand_Kingdom()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Rurasin()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Gnoll()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Goblin_Civilized()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Goblin_Tribal()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Hobgoblin_Civilized()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Hobgoblin_Tribal()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Ochre_Empire()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Viridian()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Kobold()
+{
+	var TroopComp = [
+		  0 // Artist 		   0
+		, 0 // Baker           1
+		, 0 // Carpenter       2
+		, 0 // Chandler        3
+		, 0 // Clerk           4
+		, 0 // Engineer        5
+		, 0 // Finesmith       6
+		, 0 // Fisherman       7
+		, 0 // Games           8
+		, 0 // Glassmaker      9
+		, 0 // Harper         10
+		, 0 // Herbalist      11
+		, 0 // Jeweler        12
+		, 0 // Laborer        13
+		, 0 // Leathercrafter 14
+		, 0 // Legal          15
+		, 0 // Luxury         16
+		, 0 // Mason          17
+		, 0 // Mercernary     18
+		, 0 // Merchant       19
+		, 0 // Metalsmith     20
+		, 0 // Miller         21
+		, 0 // Miner          22
+		, 0 // Ostler         23
+		, 0 // Physician      24
+		, 0 // Pilot          25
+		, 0 // Potter         26
+		, 0 // Religious      27
+		, 0 // Sailor         28
+		, 0 // Scholar        29
+		, 0 // Servant        30
+		, 0 // Shipwright     31
+		, 0 // Tailor         32
+		, 0 // Tanner         33
+		, 0 // Tavern         34
+		, 0 // Teamster       35
+		, 0 // Timber         36
+		, 0 // Weaponsmith    37
+		];	
+	return TroopComp;
+}
+function DemoInfo_Lizardmen()
+{
+	var TroopComp = [
+	   80, //"Light Foot",             0
+		0, //"Med. Foot",              1
+	   10, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+	   10, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Desert_Nomads()
+{
+	var TroopComp = [
+	   20, //"Light Foot",             0
+	   20, //"Med. Foot",              1
+		0, //"Hvy. Foot",              2
+	   10, //"Slingers",               3
+	   10, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+	   30, //"Lgt. Cavalry",           7
+	   20, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Sons_Vadim()
+{
+	var TroopComp = [
+	   30, //"Light Foot",             0
+	   10, //"Med. Foot",              1
+		0, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+	   10, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+	   15, //"Lgt. Cavalry",           7
+	   30, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+	    5, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Ogre()
+{
+	var TroopComp = [
+	   60, //"Light Foot",             0
+	   30, //"Med. Foot",              1
+	   10, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+		0, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Orc()
+{
+	var TroopComp = [
+	   50, //"Light Foot",             0
+	   10, //"Med. Foot",              1
+	   10, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+	   20, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+	   10  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Reptilemen()
+{
+	var TroopComp = [
+	   50, //"Light Foot",             0
+	   20, //"Med. Foot",              1
+	   10, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+		0, //"Shortbow",               4
+	   20, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Serpentmen()
+{
+	var TroopComp = [
+		0, //"Light Foot",             0
+	   20, //"Med. Foot",              1
+	   20, //"Hvy. Foot",              2
+		0, //"Slingers",               3
+		0, //"Shortbow",               4
+	   30, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+	   10, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+	   20  //"Beast Riders"           16
+	];	
+	return TroopComp;
+}
+function DemoInfo_Vasan()
+{
+	var TroopComp = [
+	   50, //"Light Foot",             0
+	   30, //"Med. Foot",              1
+	    0, //"Hvy. Foot",              2
+	    0, //"Slingers",               3
+	   20, //"Shortbow",               4
+		0, //"Crossbow",               5
+		0, //"Longbow",                6
+		0, //"Lgt. Cavalry",           7
+		0, //"Horse Archers",          8
+		0, //"Med. Cavalry",           9
+		0, //"Hvy. Cavalry",          10
+		0, //"Hvy. Cavalry w/Bows",   11
+		0, //"Camel Archers",         12
+		0, //"Camel Lancers",         13
+		0, //"War Elephants",         14
+		0, //"Mounted Crossbowmen",   15
+		0  //"Beast Riders"           16
+	];	
+	return TroopComp;
 }
 
 
-function common_jewels_gems(){
-	var result = "";
-	var SB = new StringBuilder();
-	var Roll = _1D20();	
-	if (Roll <= 10) {		
-		SB.Append(JewelValue);
-		SB.AppendWithDelimiter(uncommon_jewelry(),", ");
-		JewelValue = SB.ToString();
-	} else {
-		SB.Append(GemValue);
-		SB.AppendWithDelimiter(uncommon_gems(), ", ");
-		GemValue = SB.ToString();
-	}
-	return "";
-}
-
-
-
-function table_common_jewelry() {
-	var rt = new RandomTable();
-	rt.Push("Copper Necklace with Carnelian Gem (36d)");
-	rt.Push("Brass Brooch (1d)");
-	rt.Push("Brass Ring with Engravings (1d)");
-	rt.Push("Bronze Necklace (10d)");
-	rt.Push("Glass Ring with Carvings(1d)");
-	rt.Push("Copper Earring with Carvings (1d)");
-	rt.Push("Glass Brooch with Inlays of Writing (2d)");
-	rt.Push("Bone Necklace with Onyx Gem (28d)");
-	rt.Push("Copper Bracelet (8d)");
-	rt.Push("Glass Pendent (2d)");
-	return rt;
-}
-
-function table_uncommon_jewelry() {
-	var rt = new RandomTable();
-	rt.Push("Silver Bracelet (120d)");
-	rt.Push("Silver Ring with Jade Gem (54d)");
-	rt.Push("Silver Pendent with Garnet Gem (73d)");
-	rt.Push("Ivory Necklace (70d)");
-	rt.Push("Silver Necklace (180d)");
-	rt.Push("Silver Brooch with Amethyst Gem (58d)");
-	rt.Push("Silver Bracelet with Engravings (80d)");
-	rt.Push("Ivory Necklace with Garnet Gem (100d)");
-	rt.Push("Silver Brooch with Topaz Gem (269d)");
-	rt.Push("Silver Brooch with Jacinth Gem (64d)");
-	return rt;
-}
-
-function table_common_gems() {
-	var rt = new RandomTable();
-	rt.Push("Agate (5d)");
-	rt.Push("Glass (1d)");
-	rt.Push("Quartz (Rock Crystal) (5d)");
-	rt.Push("Turquoise (5d)");
-	rt.Push("Jasper (25d)");
-	rt.Push("Onyx (25d)");
-	return rt;
-}
-
-function table_uncommon_gems() {
-	var rt = new RandomTable();
-	rt.Push("Amber (50d)");
-	rt.Push("Coral (50d)");
-	rt.Push("Garnet (50d)");
-	rt.Push("Jade (50d)");
-	rt.Push("Opal (250d)");
-	rt.Push("Pearl (250d)");
-	return rt;
-}
-
-function table_common_potions() {
-	var rt = new RandomTable();
-	rt.Push("Potion of Diminution");
-	rt.Push("Potion of Gaseous Form");
-	rt.Push("Potion of Growth");
-	rt.Push("Potion of Healing");
-	rt.Push("Potion of Invisibility");
-	rt.Push("Potion of Levitation");
-	return rt;
-}

@@ -1,14 +1,56 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Bat in the Attic, Fantasy Demographics</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />	
+    <title>Fantasy Demographics Generation</title>
+    <link rel="stylesheet" href="demographics.css" type="text/css" />	
 </head>
 <body>
-	<h1>Fantasy Demographics for the Majestic Fantasy RPG</h1>
-	<i>By Robert S. Conley, Bat in the Attic Games, Copyright 2024</i>
-	<script src="bita_utilities.js"></script>
-	<script src="demographics.js"></script>	
+	<h1>Fantasy Demographics for the Majestic Fantasy Realms</h1>
+    <h2>Generate Shops for Cities, Towns, Villages</h2>
+    <form name="myForm">
+		<label for="Settlement_Culture"><b>Choose a Culture:</b></label>
+		<select name="Settlement_CultureTypes" id="Settlement_CultureTypes">
+			 <option value="Bugbear">Bugbear</option>
+			 <option value="Dwarf">Dwarf</option>
+			 <option value="Gnome">Gnome</option>
+			 <option value="Halfling">Halfling</option>
+			 <option value="Elf">Elf</option>
+			 <option value="Sylvan">Elf, Sylvan (Human)</option>
+			 <option value="Grand_Kingdom">Feudal, Grand Kingdom (Human)</option>
+			 <option value="Ostrobard">Feudal, Ostrobard (Human)</option>
+			 <option value="Rurasin">Feudal, Rurasin (Human)</option>
+			 <option value="Gnoll">Gnoll</option>
+			 <option value="Goblin_Civilized">Goblin, Civilized</option>
+			 <option value="Goblin_Tribal">Goblin, Tribal</option>
+			 <option value="Hobgoblin_Civilized">Hobgoblin, Civilized</option>
+			 <option value="Hobgoblin_Tribal">Hobgoblin, Tribal</option>
+			 <option value="Ochre Empire">Imperial, Ochre Empire(Human)</option>
+			 <option value="Viridian">Imperial, Viridian (Humans, Viridians)</option>
+			 <option value="Kobold">Kobold</option>
+			 <option value="Lizardmen">Lizardman</option>
+			 <option value="Desert_Nomads">Nomads, Desert</option>
+			 <option value="Sons_Vadim">Nomads, Sons of Vadim</option>
+			 <option value="Ogre">Ogre</option>			 
+			 <option value="Orc">Orc</option>
+			 <option value="Reptilemen">Reptile man</option>
+			 <option value="Serpentmen">Serpent man</option>
+			 <option value="Sorobe">Tribal, Sorobe</option>			 
+			 <option value="Vasan">Viking, Vasan (Human)</option>
+		</select>
+		<br/>
+		<label for = "population"><b>Population:</b></label>
+		<input type = "number" min="1" value = "1000" name="nPopulation" id="nPopulation"><br/>
+		<button type="button" onclick="Generate_Shops()">Generate Shops</button>
+		<br/>
+    </form>
+    <p id="contentSettlement"></p>
+    <button type="button" onclick="CopySettlement()">Copy Settlement Result</button>
+    <h3><b>Update:</b></h3>
+    <p><b>2023-07-20 Initial Release </b></p>
+	<p id = "contentcopyarea"> <input type="text" value="" id="contentcopySettlement"></p>
+	<p id = "contentcopyarea"> <input type="text" value="" id="contentcopyGarrison"></p>
+	<textarea id="contentcopyarea"></textarea>
+    <script src="demographics.js"></script>
 </body>
 </html>
