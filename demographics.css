@@ -1,0 +1,26 @@
+﻿body
+{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+#contentcopySettlement {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}
+#contentcopyGarrison {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}
+
+
+#contentcopyarea {
+  width: 0%;
+  border: 0px solid white;
+  border-radius: 0px;
+}

@@ -151,87 +151,135 @@ function _4DF() {
 
 function InitDemoValues(){
 	d_prof = [
-				 "Artist"         // 0
-				,"Baker"          // 1
-				,"Carpenter"      // 2
-				,"Chandler"       // 3
-				,"Clerk"          // 4
-				,"Engineer"       // 5
-				,"Finesmith"      // 6
-				,"Fisherman"      // 7
-				,"Games"          // 8
-				,"Glassmaker"     // 9
-				,"Harper"         //10
-				,"Herbalist"      //11
-				,"Jeweler"        //12
-				,"Laborer"        //13
-				,"Leathercrafter" //14
-				,"Legal" 		  //15
-				,"Luxury" 		  //16
-				,"Mason"          //17
-				,"Mercernary"     //18
-				,"Merchant"       //19
-				,"Metalsmith"     //20
-				,"Miller"         //21
-				,"Miner"          //22
-				,"Ostler"         //23
-				,"Physician"      //24
-				,"Pilot"          //25
-				,"Potter"         //26
-				,"Religious"      //27
-				,"Sailor"         //28
-				,"Scholar"        //29
-				,"Servant"        //30
-				,"Shipwright"     //31
-				,"Tailor"         //32
-				,"Tanner"         //33
-				,"Tavern"         //34
-				,"Teamster"       //35
-				,"Timber"         //36
-				,"Weaponsmith"    //37
-				,"Weaver"    //38
-	
+		 "Arcane"         // 0
+		,"Artist"         // 1
+		,"Baker"          // 2
+		,"Carpenter"      // 3
+		,"Chandler"       // 4
+		,"Clerk"          // 5
+		,"Engineer"       // 6
+		,"Finesmith"      // 7
+		,"Fisherman"      // 8
+		,"Games"          // 9
+		,"Glassmaker"     //10
+		,"Harper"         //11
+		,"Herbalist"      //12
+		,"Hireling"       //13
+		,"Jeweler"        //14
+		,"Legal"          //15
+		,"Leathercrafter" //16
+		,"Luxury"         //17
+		,"Mason"          //18
+		,"Merchant"       //19
+		,"Mercenary"      //20
+		,"Metalsmith"     //21
+		,"Military"       //22
+		,"Miller"         //23
+		,"Miner"          //24
+		,"Ostler"         //25
+		,"Physician"      //26
+		,"Pilot"          //27
+		,"Potter"         //28
+		,"Religious"      //29
+		,"Rulers"         //30
+		,"Sailor"         //31
+		,"Scholar"        //32
+		,"Shipwright"     //33
+		,"Tailor"         //34
+		,"Tanner"         //35
+		,"Tavern"         //36
+		,"Teamster"       //37
+		,"Timber"         //38
+		,"Weaponsmith"    //39
+		,"Weaver"         //40
 	];
-	d_value = [	 965   // 0
-				,202   // 1
-				,196   // 2
-				,509   // 3
-				,3929  // 4
-				,13750 // 5
-				,238   // 6
-				,1078  // 7
-				,3667  // 8
-				,1375  // 9
-				,6875  //10
-				,573   //11
-				,276   //12
-				,149   //13
-				,80    //14
-				,1222  //15
-				,18333 //16
-				,259   //17
-				,3929  //18
-				,243   //19
-				,529   //20
-				,275   //21
-				,1618  //22
-				,322   //23
-				,289   //24
-				,1774  //25
-				,2619  //26
-				,786   //27
-				,4583  //28
-				,353   //29
-				,154   //30
-				,3929  //31
-				,94    //32
-				,1058  //33
-				,130   //34
-				,1122  //35
-				,833   //36
-				,462   //37
-				,119   //38
-]
+	d_value = [
+	   1200, // Arcane
+		900, // Artist
+		180, // Baker
+		220, // Carpenter
+		450, // Chandler
+	   3000, // Clerk
+	   8000, // Engineer
+		260, // Finesmith
+	   1100, // Fisherman
+	   2500, // Games
+	   1400, // Glassmaker
+	   5000, // Harper
+		650, // Herbalist
+		140, // Hireling
+		300, // Jeweler
+	   1200, // Legal
+		120, // Leathercrafter
+	  12000, // Luxury
+		240, // Mason
+		260, // Merchant
+	   2000, // Mercenary
+		550, // Metalsmith
+		400, // Military
+		300, // Miller
+	   1600, // Miner
+		350, // Ostler
+		320, // Physician
+	   2000, // Pilot
+	   2400, // Potter
+		700, // Religious
+	   2500, // Rulers
+	   4500, // Sailor
+		500, // Scholar
+	   4000, // Shipwright
+		110, // Tailor
+	   1000, // Tanner
+		140, // Tavern
+	   1100, // Teamster
+		900, // Timber
+		500, // Weaponsmith
+		130  // Weaver
+	];
+	
+	d_value = [
+     8000, // Arcane
+     1200, // Artist
+      350, // Baker
+      175, // Carpenter
+      750, // Chandler
+     4500, // Clerk
+    15000, // Engineer
+      500, // Finesmith
+      450, // Fisherman
+     4500, // Games
+     2500, // Glassmaker
+     4000, // Harper
+      350, // Herbalist
+       65, // Hireling
+      500, // Jeweler
+     2000, // Legal
+       85, // Leathercrafter
+    22000, // Luxury
+      300, // Mason
+      250, // Merchant
+     2500, // Mercenary
+      350, // Metalsmith
+       50, // Military
+      250, // Miller
+     1500, // Miner
+      375, // Ostler
+     1500, // Physician
+     1500, // Pilot
+     2000, // Potter
+      250, // Religious
+      250, // Rulers
+     2000, // Sailor
+     1200, // Scholar
+     2800, // Shipwright
+      120, // Tailor
+      900, // Tanner
+      140, // Tavern
+     1000, // Teamster
+      750, // Timber
+      550, // Weaponsmith
+       75  // Weaver
+	];
 	
 	return;
 }
@@ -262,12 +310,12 @@ function Generate_Shops(){
 	
 	var TempD = 0.0;
 	var nPopulation = parseInt(document.forms["myForm"]["nPopulation"].value);
-	var Tally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-	var FinalTally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var Tally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var FinalTally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	InitDemoValues();
 	
 	
-	for (i = 0; i < 39; i++) {
+	for (i = 0; i < 41; i++) {
 		TempD = d_value[i]/ nPopulation;
 	    TempD =  nPopulation / d_value[i];
 		Tally[i] = Math.floor(TempD);
@@ -278,7 +326,7 @@ function Generate_Shops(){
 		}
 		
 	}
-	for (i = 0; i < 39; i++) {
+	for (i = 0; i < 41; i++) {
 		if (Tally[i] > 0) {
 			if (i > 0) SB.Append(" ");
 			SB.Append(d_prof[i]);
@@ -324,8 +372,11 @@ function GetDemoInfo(race_culture)
 	var result;
 	switch (race_culture)
 	{
-		case "Bugbear":
-			result = DemoInfo_Bugbear();
+		case "Bugbear_Civilized":
+			result = DemoInfo_Bugbear_Civilized();
+			break;
+		case "Bugbear_Tribal":
+			result = DemoInfo_Bugbear_Tribal();
 			break;
 		case "Dwarf":
 			result = DemoInfo_Dwarf();
@@ -409,1027 +460,1323 @@ function GetDemoInfo(race_culture)
 function Demographic_Template()
 {
 	var Demographics = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
-
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 	];	
 	return Demographics;
 }
 
-function DemoInfo_Bugbear()
+function DemoInfo_Bugbear_Civilized()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
+function DemoInfo_Bugbear_Tribal()
+{
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
+}
+
 function DemoInfo_Dwarf()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Gnome()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Elf()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Sylvan()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Halfling()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 
 function DemoInfo_Sorobe()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 
 function DemoInfo_Ostrobard()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 
 function DemoInfo_Grand_Kingdom()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Rurasin()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Gnoll()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Goblin_Civilized()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Goblin_Tribal()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Hobgoblin_Civilized()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Hobgoblin_Tribal()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Ochre_Empire()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Viridian()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Kobold()
 {
-	var TroopComp = [
-		  0 // Artist 		   0
-		, 0 // Baker           1
-		, 0 // Carpenter       2
-		, 0 // Chandler        3
-		, 0 // Clerk           4
-		, 0 // Engineer        5
-		, 0 // Finesmith       6
-		, 0 // Fisherman       7
-		, 0 // Games           8
-		, 0 // Glassmaker      9
-		, 0 // Harper         10
-		, 0 // Herbalist      11
-		, 0 // Jeweler        12
-		, 0 // Laborer        13
-		, 0 // Leathercrafter 14
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
 		, 0 // Legal          15
-		, 0 // Luxury         16
-		, 0 // Mason          17
-		, 0 // Mercernary     18
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
 		, 0 // Merchant       19
-		, 0 // Metalsmith     20
-		, 0 // Miller         21
-		, 0 // Miner          22
-		, 0 // Ostler         23
-		, 0 // Physician      24
-		, 0 // Pilot          25
-		, 0 // Potter         26
-		, 0 // Religious      27
-		, 0 // Sailor         28
-		, 0 // Scholar        29
-		, 0 // Servant        30
-		, 0 // Shipwright     31
-		, 0 // Tailor         32
-		, 0 // Tanner         33
-		, 0 // Tavern         34
-		, 0 // Teamster       35
-		, 0 // Timber         36
-		, 0 // Weaponsmith    37
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
 		];	
-	return TroopComp;
+	return Demographics;
 }
 function DemoInfo_Lizardmen()
 {
-	var TroopComp = [
-	   80, //"Light Foot",             0
-		0, //"Med. Foot",              1
-	   10, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-	   10, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Desert_Nomads()
 {
-	var TroopComp = [
-	   20, //"Light Foot",             0
-	   20, //"Med. Foot",              1
-		0, //"Hvy. Foot",              2
-	   10, //"Slingers",               3
-	   10, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-	   30, //"Lgt. Cavalry",           7
-	   20, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Sons_Vadim()
 {
-	var TroopComp = [
-	   30, //"Light Foot",             0
-	   10, //"Med. Foot",              1
-		0, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-	   10, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-	   15, //"Lgt. Cavalry",           7
-	   30, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-	    5, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Ogre()
 {
-	var TroopComp = [
-	   60, //"Light Foot",             0
-	   30, //"Med. Foot",              1
-	   10, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-		0, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Orc()
 {
-	var TroopComp = [
-	   50, //"Light Foot",             0
-	   10, //"Med. Foot",              1
-	   10, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-	   20, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-	   10  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Reptilemen()
 {
-	var TroopComp = [
-	   50, //"Light Foot",             0
-	   20, //"Med. Foot",              1
-	   10, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-		0, //"Shortbow",               4
-	   20, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Serpentmen()
 {
-	var TroopComp = [
-		0, //"Light Foot",             0
-	   20, //"Med. Foot",              1
-	   20, //"Hvy. Foot",              2
-		0, //"Slingers",               3
-		0, //"Shortbow",               4
-	   30, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-	   10, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-	   20  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 function DemoInfo_Vasan()
 {
-	var TroopComp = [
-	   50, //"Light Foot",             0
-	   30, //"Med. Foot",              1
-	    0, //"Hvy. Foot",              2
-	    0, //"Slingers",               3
-	   20, //"Shortbow",               4
-		0, //"Crossbow",               5
-		0, //"Longbow",                6
-		0, //"Lgt. Cavalry",           7
-		0, //"Horse Archers",          8
-		0, //"Med. Cavalry",           9
-		0, //"Hvy. Cavalry",          10
-		0, //"Hvy. Cavalry w/Bows",   11
-		0, //"Camel Archers",         12
-		0, //"Camel Lancers",         13
-		0, //"War Elephants",         14
-		0, //"Mounted Crossbowmen",   15
-		0  //"Beast Riders"           16
-	];	
-	return TroopComp;
+	var Demographics = [
+		  0 // Arcane          0
+		, 0 // Artist          1
+		, 0 // Baker           2
+		, 0 // Carpenter       3
+		, 0 // Chandler        4
+		, 0 // Clerk           5
+		, 0 // Engineer        6
+		, 0 // Finesmith       7
+		, 0 // Fisherman       8
+		, 0 // Games           9
+		, 0 // Glassmaker     10
+		, 0 // Harper         11
+		, 0 // Herbalist      12
+		, 0 // Hireling       13
+		, 0 // Jeweler        14
+		, 0 // Legal          15
+		, 0 // Leathercrafter 16
+		, 0 // Luxury         17
+		, 0 // Mason          18
+		, 0 // Merchant       19
+		, 0 // Mercenary      20
+		, 0 // Metalsmith     21
+		, 0 // Military       22
+		, 0 // Miller         23
+		, 0 // Miner          24
+		, 0 // Ostler         25
+		, 0 // Physician      26
+		, 0 // Pilot          27
+		, 0 // Potter         28
+		, 0 // Religious      29
+		, 0 // Rulers         30
+		, 0 // Sailor         31
+		, 0 // Scholar        32
+		, 0 // Shipwright     33
+		, 0 // Tailor         34
+		, 0 // Tanner         35
+		, 0 // Tavern         36
+		, 0 // Teamster       37
+		, 0 // Timber         38
+		, 0 // Weaponsmith    39
+		, 0 // Weaver         40
+		];	
+	return Demographics;
 }
 
 
