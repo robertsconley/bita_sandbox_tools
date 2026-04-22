@@ -284,6 +284,22 @@ function InitDemoValues(){
 	return;
 }
 
+function GetShopTypeCount() {
+	var result = Math.min(d_prof.length, d_value.length);
+	if (d_prof.length !== d_value.length) {
+		console.warn("Shop type data mismatch: " + d_prof.length + " labels vs " + d_value.length + " values.");
+	}
+	return result;
+}
+
+function ZeroedDemographics() {
+	var Demographics = [];
+	for (var i = 0; i < d_prof.length; i++) {
+		Demographics.push(0);
+	}
+	return Demographics;
+}
+
 function CopySettlement() {
   var copyText = document.getElementById("contentcopySettlement");
   copyText.value = document.getElementById("contentSettlement").innerHTML
@@ -310,12 +326,14 @@ function Generate_Shops(){
 	
 	var TempD = 0.0;
 	var nPopulation = parseInt(document.forms["myForm"]["nPopulation"].value);
-	var Tally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-	var FinalTally = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 	InitDemoValues();
+	var shopTypeCount = GetShopTypeCount();
+	var Tally = ZeroedDemographics();
 	
 	
-	for (i = 0; i < 41; i++) {
+	for (var i = 0; i < shopTypeCount; i++) {
+		var OneMore;
+		var OneMoreRoll;
 		TempD = d_value[i]/ nPopulation;
 	    TempD =  nPopulation / d_value[i];
 		Tally[i] = Math.floor(TempD);
@@ -326,7 +344,7 @@ function Generate_Shops(){
 		}
 		
 	}
-	for (i = 0; i < 41; i++) {
+	for (var i = 0; i < shopTypeCount; i++) {
 		if (Tally[i] > 0) {
 			if (i > 0) SB.Append(" ");
 			SB.Append(d_prof[i]);
@@ -459,101 +477,14 @@ function GetDemoInfo(race_culture)
 
 function Demographic_Template()
 {
-	var Demographics = [
-		  0 // Arcane          0
-		, 0 // Artist          1
-		, 0 // Baker           2
-		, 0 // Carpenter       3
-		, 0 // Chandler        4
-		, 0 // Clerk           5
-		, 0 // Engineer        6
-		, 0 // Finesmith       7
-		, 0 // Fisherman       8
-		, 0 // Games           9
-		, 0 // Glassmaker     10
-		, 0 // Harper         11
-		, 0 // Herbalist      12
-		, 0 // Hireling       13
-		, 0 // Jeweler        14
-		, 0 // Legal          15
-		, 0 // Leathercrafter 16
-		, 0 // Luxury         17
-		, 0 // Mason          18
-		, 0 // Merchant       19
-		, 0 // Mercenary      20
-		, 0 // Metalsmith     21
-		, 0 // Military       22
-		, 0 // Miller         23
-		, 0 // Miner          24
-		, 0 // Ostler         25
-		, 0 // Physician      26
-		, 0 // Pilot          27
-		, 0 // Potter         28
-		, 0 // Religious      29
-		, 0 // Rulers         30
-		, 0 // Sailor         31
-		, 0 // Scholar        32
-		, 0 // Shipwright     33
-		, 0 // Tailor         34
-		, 0 // Tanner         35
-		, 0 // Tavern         36
-		, 0 // Teamster       37
-		, 0 // Timber         38
-		, 0 // Weaponsmith    39
-		, 0 // Weaver         40
-	];	
-	return Demographics;
+	InitDemoValues();
+	return ZeroedDemographics();
 }
 
-function DemoInfo_Bugbear_Civilized()
-{
-	var Demographics = [
-		  0 // Arcane          0
-		, 0 // Artist          1
-		, 0 // Baker           2
-		, 0 // Carpenter       3
-		, 0 // Chandler        4
-		, 0 // Clerk           5
-		, 0 // Engineer        6
-		, 0 // Finesmith       7
-		, 0 // Fisherman       8
-		, 0 // Games           9
-		, 0 // Glassmaker     10
-		, 0 // Harper         11
-		, 0 // Herbalist      12
-		, 0 // Hireling       13
-		, 0 // Jeweler        14
-		, 0 // Legal          15
-		, 0 // Leathercrafter 16
-		, 0 // Luxury         17
-		, 0 // Mason          18
-		, 0 // Merchant       19
-		, 0 // Mercenary      20
-		, 0 // Metalsmith     21
-		, 0 // Military       22
-		, 0 // Miller         23
-		, 0 // Miner          24
-		, 0 // Ostler         25
-		, 0 // Physician      26
-		, 0 // Pilot          27
-		, 0 // Potter         28
-		, 0 // Religious      29
-		, 0 // Rulers         30
-		, 0 // Sailor         31
-		, 0 // Scholar        32
-		, 0 // Shipwright     33
-		, 0 // Tailor         34
-		, 0 // Tanner         35
-		, 0 // Tavern         36
-		, 0 // Teamster       37
-		, 0 // Timber         38
-		, 0 // Weaponsmith    39
-		, 0 // Weaver         40
-		];	
-	return Demographics;
-}
+function DemoInfo_Bugbear_Civilized() { return Demographic_Template(); }
 function DemoInfo_Bugbear_Tribal()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -602,6 +533,7 @@ function DemoInfo_Bugbear_Tribal()
 
 function DemoInfo_Dwarf()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -649,6 +581,7 @@ function DemoInfo_Dwarf()
 }
 function DemoInfo_Gnome()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -696,6 +629,7 @@ function DemoInfo_Gnome()
 }
 function DemoInfo_Elf()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -743,6 +677,7 @@ function DemoInfo_Elf()
 }
 function DemoInfo_Sylvan()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -790,6 +725,7 @@ function DemoInfo_Sylvan()
 }
 function DemoInfo_Halfling()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -838,6 +774,7 @@ function DemoInfo_Halfling()
 
 function DemoInfo_Sorobe()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -886,6 +823,7 @@ function DemoInfo_Sorobe()
 
 function DemoInfo_Ostrobard()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -934,6 +872,7 @@ function DemoInfo_Ostrobard()
 
 function DemoInfo_Grand_Kingdom()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -981,6 +920,7 @@ function DemoInfo_Grand_Kingdom()
 }
 function DemoInfo_Rurasin()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1028,6 +968,7 @@ function DemoInfo_Rurasin()
 }
 function DemoInfo_Gnoll()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1075,6 +1016,7 @@ function DemoInfo_Gnoll()
 }
 function DemoInfo_Goblin_Civilized()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1122,6 +1064,7 @@ function DemoInfo_Goblin_Civilized()
 }
 function DemoInfo_Goblin_Tribal()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1169,6 +1112,7 @@ function DemoInfo_Goblin_Tribal()
 }
 function DemoInfo_Hobgoblin_Civilized()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1216,6 +1160,7 @@ function DemoInfo_Hobgoblin_Civilized()
 }
 function DemoInfo_Hobgoblin_Tribal()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1263,6 +1208,7 @@ function DemoInfo_Hobgoblin_Tribal()
 }
 function DemoInfo_Ochre_Empire()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1310,6 +1256,7 @@ function DemoInfo_Ochre_Empire()
 }
 function DemoInfo_Viridian()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1357,6 +1304,7 @@ function DemoInfo_Viridian()
 }
 function DemoInfo_Kobold()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1404,6 +1352,7 @@ function DemoInfo_Kobold()
 }
 function DemoInfo_Lizardmen()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1451,6 +1400,7 @@ function DemoInfo_Lizardmen()
 }
 function DemoInfo_Desert_Nomads()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1498,6 +1448,7 @@ function DemoInfo_Desert_Nomads()
 }
 function DemoInfo_Sons_Vadim()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1545,6 +1496,7 @@ function DemoInfo_Sons_Vadim()
 }
 function DemoInfo_Ogre()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1592,6 +1544,7 @@ function DemoInfo_Ogre()
 }
 function DemoInfo_Orc()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1639,6 +1592,7 @@ function DemoInfo_Orc()
 }
 function DemoInfo_Reptilemen()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1686,6 +1640,7 @@ function DemoInfo_Reptilemen()
 }
 function DemoInfo_Serpentmen()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1733,6 +1688,7 @@ function DemoInfo_Serpentmen()
 }
 function DemoInfo_Vasan()
 {
+	return Demographic_Template();
 	var Demographics = [
 		  0 // Arcane          0
 		, 0 // Artist          1
@@ -1778,5 +1734,4 @@ function DemoInfo_Vasan()
 		];	
 	return Demographics;
 }
-
 
