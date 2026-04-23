@@ -53,3 +53,30 @@ span {
   border-radius: 0px;
   width: 50%
 }
+
+.event_subheader {
+	background: #c9c9c9;           /* flat light grey */
+	color: #000;
+	padding: 4px 10px;            /* tight vertical spacing */
+	font-size: 0.95rem;
+	font-style: italic;           /* matches your example */
+	border-bottom: 1px solid #999;
+}
+
+.event_subheader_item {
+	display: inline;
+}
+
+.event_subheader_label {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.event_subheader_value {
+	font-style: italic;
+}
+
+.event_subheader_sep {
+	margin: 0 8px;
+	color: #333;
+}
