@@ -107,47 +107,47 @@ function JourneyEncounter(){
 	switch(roll) {
 		case 2:
 			result = "Chance Meeting";
-			desc = Desc_Meeting();
+			desc = Desc_Journey_Meeting();
 			break;
 		case 3:
 			result = "Random Encounter";
-			desc = Desc_Random();
+			desc = Desc_Journey_Random();
 			break;
 		case 4:
 			result = "Natural Wonder";
-			desc = Desc_Natural_Wonder();
+			desc = Desc_Journey_Natural_Wonder();
 			break;
 		case 5:
 			result = "Ruins of the Past";
-			desc = Desc_Ruins_Past();
+			desc = Desc_Journey_Ruins_Past();
 			break;
 		case 6:
 			result = "Exceptional Campsite";
-			desc = Desc_Campsite();
+			desc = Desc_Journey_Campsite();
 			break;
 		case 7:
 			result = "Random Encounter";
-			desc = Desc_Random();
+			desc = Desc_Journey_Random();
 			break;
 		case 8:
 			result = "Opportunity for Resupply";
-			desc = Desc_Resupply();			
+			desc = Desc_Journey_Resupply();			
 			break;
 		case 9:
 			result = "Obstacle";
-			desc = Desc_Obstacle();
+			desc = Desc_Journey_Obstacle();
 			break;
 		case 10:
 			result = "Inclement Weather";
-			desc = Desc_Weather();
+			desc = Desc_Journey_Weather();
 			break;
 		case 11:
 			result = "Random Encounter";
-			desc = Desc_Random();
+			desc = Desc_Journey_Random();
 			break;
 		case 12:
 			result = "Enemy Abroad";
-			desc = Desc_Enemy_About();
+			desc = Desc_Journey_Enemy_About();
 			break;		
 	}
 	finalresult = '<div class = "encounter_block">';
@@ -371,19 +371,19 @@ function EventDescription(Desc) {
 	return result;
 }
 
-function Desc_Enemy_About()
+function Desc_Journey_Enemy_About()
 {
 	result = "The character or party encounters a significant enemy group or NPC. The encounter will be a challenge to overcome. This could be combat, but it also can be another type of encounter that could result in a setback in completing the journey or a major goal. The referee should pick something or someone found in the area or elsewhere within the setting of the campaign.";
 	return EventDescription(result);
 }
 
-function Desc_Natural_Wonder()
+function Desc_Journey_Natural_Wonder()
 {
 	result = "The party encounters a natural wonder of the setting of the campaign. The opportunity for a brief respite refreshes the party’s spirit, giving renewed vigor to tackle the rest of the journey. The perception skill is the vital in making the most of the opportunity. A successful check means that the party loses a level of exhaustion as they enjoy the beauty of their surroundings. ";
 	return EventDescription(result);
 }
 
-function Desc_Ruins_Past()
+function Desc_Journey_Ruins_Past()
 {
 	result = "The party encounters ruins from the region's past. Roll for significance to determine the extent of the ruins. The referee can use this encounter in one of two ways. First, as an opportunity for a small adventure.";
 	result += "<br/>"
@@ -392,7 +392,7 @@ function Desc_Ruins_Past()
 	return EventDescription(result);
 }
 
-function Desc_Campsite()
+function Desc_Journey_Campsite()
 {
 	result = "While stopping for the day the party encounters a campsite that is either an exceptionally good or an exceptionally bad one for resting. In both cases the use of the survival skill is crucial to either take advantage of the opportunity or to overcome the challenge. If it is an exceptionally good campsite, success will mean that the party will lose an extra level of exhaustion after resting. If it is an exceptionally bad campsite the party will gain a level of exhaustion.  ";
 	result += "<br/>"
@@ -405,19 +405,19 @@ function Desc_Campsite()
 	return EventDescription(result);
 }
 
-function Desc_Resupply()
+function Desc_Journey_Resupply()
 {
 	result = "During the journey, the party encounters an opportunity for foraging or hunting to replenish their food or herb supplies. If the party chooses to take advantage of the opportunity, make a survival or herblore skill check. The entire party does not have to be involved in the attempt. Of those characters involved, the one with the highest skill should make the roll.";
 	return EventDescription(result);
 }
 
-function Desc_Obstacle()
+function Desc_Journey_Obstacle()
 {
 	result = "An obstacle forces the party to take an alternate route to their destination. This obstacle can be natural, manmade, or supernatural. Use an Encounter Type roll to decide how much of a detour is involved. The survival skill is crucial in dealing with the impact of the detour. A successful check means that a detour has been found and the journey continues without any additional impact. A failure means that the detour was difficult, and the party suffers one level of fatigue.";
 	return EventDescription(result);
 }
 
-function Desc_Weather()
+function Desc_Journey_Weather()
 {
 	result = "The weather turns foul for the season. A blizzard, thunderstorm, dust, heat, or high humidity create a challenge for the party to overcome.  The survival skill is crucial to the party’s success in dealing with the weather. Success means the party finds shelter or safety with no further effects on the party. Failure means that the party suffers a level of exhaustion. ";
 	result += "<br/>"
@@ -432,19 +432,19 @@ function Desc_Weather()
 	return EventDescription(result);
 }
 
-function Desc_Meeting()
+function Desc_Journey_Meeting()
 {
 	result = "The character or party encounters a significant NPC or group which creates an opportunity to advance an important goal. This could be the NPC agreeing to be an ally, passing on important information, or providing significant aid. Locution or persuasion skills will often play a big part in exploiting this opportunity.";
 	return EventDescription(result);
 }
 
-function Desc_Random()
+function Desc_Journey_Random()
 {
 	result = "Use your favorite random encounter system to generate an encounter with an NPC or creature based on the terrain and circumstances.";
 	return EventDescription(result);
 }
 
-function Desc_()
+function Desc_Journey_()
 {
 	result = "";
 	return EventDescription(result);
